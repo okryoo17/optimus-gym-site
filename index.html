@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>OPTIMUS GYM｜埼玉・深谷の総合格闘技ジム｜体験1回無料</title>
+<meta name="description" content="埼玉県深谷市の総合格闘技ジム OPTIMUS GYM。代表ダニエルと、パンクラス王者・修斗の実績者のコーチ陣が指導。MMA・キックボクシング・グラップリング・キッズ・女性フィットネス。体験1回無料。">
+<link rel="icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+/* DESIGN.md「試合ポスター」。箱で囲まず、写真・極太の文字・罫線で見せる */
+:root{--ink:#141210;--ink2:#1d1a17;--paper:#efebe3;--tx:#f1ede6;--mut:#a39d94;--y:#f5d547;--line:#06c755;--rule:#3a352f;--red:#d8352a}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+html,body{overflow-x:clip}
+body{background:var(--ink);color:var(--tx);font-family:"Noto Sans JP",sans-serif;line-height:1.85;-webkit-font-smoothing:antialiased}
+/* 改行は文節の境目(U+200B)だけ。build_wrap.py が入れる */
+html[lang=ja] body{word-break:keep-all;overflow-wrap:anywhere;line-break:strict}
+p,li,figcaption,.note{text-wrap:pretty}
+h1,h2,h3{text-wrap:balance}
+html[lang=ja] .en{display:none!important}
+html[lang=en] .ja{display:none!important}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.an{font-family:Anton,"Noto Sans JP",sans-serif;font-weight:400;letter-spacing:.02em}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.y{color:var(--y)}
+
+/* header */
+header{position:fixed;inset:0 0 auto;z-index:50;transition:background-color .35s}
+header.on,header.open{background:rgba(20,18,16,.97);border-bottom:1px solid var(--rule)}
+.hd{display:flex;align-items:center;justify-content:space-between;height:64px;gap:14px}
+.hd img{height:40px}
+.logo-btn{display:flex;align-items:center;gap:10px;background:none;border:0;padding:0;cursor:pointer;color:var(--tx)}
+.mb-l{display:inline-flex;align-items:center;gap:6px;font:400 12px Anton,sans-serif;letter-spacing:.16em;color:var(--y)}
+.mb-l i{width:8px;height:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-2px) rotate(45deg);transition:transform .3s}
+.logo-btn[aria-expanded=true] .mb-l i{transform:translateY(2px) rotate(225deg)}
+.mnu{background:rgba(20,18,16,.98);border-bottom:2px solid var(--y);max-height:calc(100vh - 64px);overflow:auto}
+.mnu ol{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px;padding:14px 0 26px}
+.mnu a{display:flex;align-items:baseline;gap:14px;padding:13px 0;border-bottom:1px solid var(--rule);font-weight:700;font-size:15px;transition:color .2s,transform .3s cubic-bezier(.16,1,.3,1)}
+.mnu a b{font:400 20px Anton,sans-serif;letter-spacing:.06em;color:var(--y);min-width:120px}
+.mnu a:hover{color:var(--y);transform:translateX(6px)}
+.mnu:not([hidden]){animation:mnuIn .35s cubic-bezier(.16,1,.3,1)}
+@keyframes mnuIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+@media(max-width:640px){.mnu ol{grid-template-columns:1fr}.mnu a{padding:11px 0}.mnu a b{font-size:18px;min-width:110px}}
+nav{display:flex;gap:26px;font-size:13px;font-weight:700}
+nav a{opacity:.8;transition:opacity .2s}
+nav a:hover{opacity:1;color:var(--y)}
+.hr{display:flex;align-items:center;gap:10px}
+.lang{display:flex;border:1px solid #5a544c}
+.lang button{background:none;border:0;color:#bdb6ab;padding:5px 10px;cursor:pointer;font:400 13px Anton,sans-serif;letter-spacing:.08em}
+.lang button.on{background:var(--tx);color:var(--ink)}
+@media(max-width:960px){nav{display:none}}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:12px;font-weight:900;padding:16px 24px;border-radius:2px;line-height:1.3;transition:transform .25s,background-color .25s,color .25s}
+.btn svg{width:22px;height:22px;flex:0 0 22px}
+.btn .arw{display:inline-block;transition:transform .3s cubic-bezier(.16,1,.3,1)}
+.btn:hover .arw{transform:translateX(6px)}
+.btn.line{background:var(--line);color:#fff}
+.btn.line:hover{transform:translateY(-2px)}
+.btn.out{border:2px solid currentColor}
+.btn.out:hover{background:var(--tx);color:var(--ink)}
+.hd .btn{padding:9px 14px;font-size:13px}
+@media(max-width:520px){.hd .btn{display:none}}
+.tl{display:inline-flex;gap:8px;font-weight:700;border-bottom:2px solid var(--y);padding-bottom:2px}
+.tl .arw{transition:transform .3s}.tl:hover .arw{transform:translateX(6px)}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
+.hero .bg{position:absolute;inset:0 0 -18%}
+.hero .bg img{width:100%;height:100%;object-fit:cover;object-position:60% 40%;filter:grayscale(1) contrast(1.15) brightness(.7);animation:kb 18s ease-out both}
+@keyframes kb{from{transform:scale(1.14)}to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,18,16,.92) 0%,rgba(20,18,16,.55) 55%,rgba(20,18,16,.2) 100%),linear-gradient(0deg,var(--ink) 0%,transparent 40%)}
+.hero .wrap{position:relative;z-index:2;width:100%;padding-top:110px;padding-bottom:48px}
+.kick{font-family:Anton,sans-serif;font-size:14px;letter-spacing:.24em;color:var(--y)}
+.hero h1{font-size:clamp(38px,7vw,92px);line-height:1.12;font-weight:900;letter-spacing:-.01em;margin:18px 0 22px}
+.hero h1 em{font-style:normal;color:var(--y)}
+.lead{font-size:clamp(15px,1.6vw,18px);color:#d9d3c9;max-width:600px}
+.cta{display:flex;flex-wrap:wrap;gap:22px;margin-top:32px;align-items:center}
+.note{font-size:12px;color:var(--mut);margin-top:12px}
+.stats{display:grid;grid-template-columns:repeat(5,1fr);margin-top:56px;border-top:1px solid var(--rule)}
+.stat{padding:18px 18px 0 0}
+.stat+.stat{padding-left:18px;border-left:1px solid var(--rule)}
+.stat b{display:block;font-family:Anton,sans-serif;font-weight:400;font-size:clamp(34px,4.4vw,56px);line-height:1;color:var(--tx)}
+.stat b i{font-style:normal;color:var(--y)}
+.stat>span{display:block;font-size:12px;color:var(--mut);margin-top:8px}
+@media(max-width:700px){.stats{grid-template-columns:1fr 1fr}.stat:nth-child(odd){padding-left:0;border-left:0}.stat:nth-child(even){padding-left:18px;border-left:1px solid var(--rule)}.stat:nth-child(n+3){border-top:1px solid var(--rule);margin-top:14px}.stat:last-child{grid-column:1/-1}}
+
+/* ticker */
+.mq{background:var(--y);color:var(--ink);overflow:hidden;white-space:nowrap;padding:10px 0;transform:rotate(-1.2deg);position:relative;z-index:3}
+.mq div{display:inline-block;animation:mq 32s linear infinite}
+.mq span{margin:0 26px;font-family:Anton,sans-serif;font-size:22px;letter-spacing:.04em}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+section{padding:120px 0;position:relative}
+.eyebrow{font-family:Anton,sans-serif;font-size:14px;letter-spacing:.24em;color:var(--y);display:flex;align-items:center;gap:14px}
+.eyebrow::before{content:"";width:34px;height:2px;background:currentColor}
+.h2{font-size:clamp(28px,4.2vw,52px);font-weight:900;line-height:1.25;margin-top:14px}
+.sub{color:var(--mut);margin-top:16px;max-width:640px}
+.head{margin-bottom:56px}
+
+/* path：大会→その先 を大きな行で */
+.road{border-top:1px solid var(--rule)}
+.rw{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px;padding:22px 0;border-bottom:1px solid var(--rule);transition:padding .4s cubic-bezier(.16,1,.3,1)}
+.rw:hover{padding-left:14px}
+.rw .f{white-space:nowrap;font-family:Anton,sans-serif;font-size:clamp(28px,6vw,84px);line-height:1;color:transparent;-webkit-text-stroke:1.5px var(--tx)}
+.rw .ar{font-size:12px;color:var(--mut);text-align:center;letter-spacing:.1em}
+.rw .ar b{display:block;font-family:Anton,sans-serif;font-size:28px;color:var(--y);line-height:1}
+.rw .t{font-family:Anton,sans-serif;font-size:clamp(28px,6vw,84px);line-height:1;color:var(--y);text-align:right}
+.match{margin-top:34px;font-size:17px;max-width:760px}
+
+/* champion */
+.champ{background:var(--ink2);overflow:clip}
+.champ .wrap{position:relative}
+.ghost{position:absolute;right:-10px;top:40px;font-family:Anton,sans-serif;font-size:clamp(70px,11vw,150px);line-height:.9;color:transparent;-webkit-text-stroke:1px #3d3832;pointer-events:none;writing-mode:vertical-rl}
+.pf h3{font-size:clamp(26px,2.8vw,34px);font-weight:900;line-height:1.2;margin-top:12px;position:relative}
+.pf h3 small{display:block;font-size:13px;color:var(--mut);font-weight:700;margin-bottom:6px}
+.facts{list-style:none;margin-top:30px;position:relative}
+.facts li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:10px;padding:14px 0;border-top:1px solid var(--rule);font-weight:700}
+.facts li i{font-style:normal;font-family:Anton,sans-serif;color:var(--y);font-size:20px;line-height:1.3}
+.pf{position:relative;margin-top:34px;padding-top:24px;border-top:2px solid var(--y)}
+.pf p{font-size:14.5px;color:#d9d3c9;margin-top:8px}
+.pf .facts{margin-top:12px}
+.young{margin-top:14px;position:relative;font-size:15px;color:#d9d3c9}
+.young b{display:block;font-size:20px;color:var(--tx)}
+.coaches{display:grid;grid-template-columns:minmax(0,1fr);gap:48px;margin-top:44px;position:relative;max-width:1000px}
+.co{display:grid;grid-template-columns:240px minmax(0,1fr);gap:36px;align-items:start}
+.cimg{aspect-ratio:4/5;overflow:hidden;background:var(--ink2)}
+.cimg img{width:100%;height:100%;object-fit:cover;object-position:center 20%;transition:transform .8s cubic-bezier(.16,1,.3,1)}
+.co:hover .cimg img{transform:scale(1.05)}
+.co .pf{margin-top:0}
+@media(max-width:900px){.co{grid-template-columns:minmax(0,1fr);gap:18px}.cimg{width:58%;max-width:300px}.ghost{display:none}}
+
+/* film */
+.films{display:grid;grid-template-columns:1.5fr 1fr;gap:22px;align-items:end}
+.film{position:relative;aspect-ratio:16/9;background:var(--ink2);overflow:hidden;cursor:pointer}
+.film img{width:100%;height:100%;object-fit:cover;filter:grayscale(.4) brightness(.65);transition:transform .7s cubic-bezier(.16,1,.3,1),filter .4s}
+.film:hover img{transform:scale(1.05);filter:grayscale(0) brightness(.8)}
+.film iframe{width:100%;height:100%;border:0}
+.play{position:absolute;left:22px;bottom:20px;display:flex;align-items:center;gap:12px;font-family:Anton,sans-serif;letter-spacing:.12em;font-size:15px}
+.play::before{content:"";width:54px;height:54px;background:var(--y);clip-path:polygon(32% 22%,32% 78%,76% 50%);box-shadow:inset 0 0 0 60px var(--y)}
+figcaption{font-size:13px;color:var(--mut);margin-top:10px}
+@media(max-width:760px){.films{grid-template-columns:1fr}}
+
+/* 紙の面 */
+.paper{background:var(--paper);color:var(--ink)}
+.paper .sub,.paper .mut{color:#6b645a}
+.paper .eyebrow{color:#8a6d00}
+.cut{clip-path:polygon(0 4vw,100% 0,100% 100%,0 100%);padding-top:calc(120px + 4vw);margin-top:-4vw}
+
+/* classes：番号つきの行 */
+.cls-g{max-width:980px}
+.cl-row{display:grid;grid-template-columns:64px 1fr;gap:6px 18px;padding:24px 0;border-top:2px solid var(--ink);transition:transform .4s cubic-bezier(.16,1,.3,1)}
+.cl-row:last-child{border-bottom:2px solid var(--ink)}
+.cl-row.has-ph{grid-template-columns:64px 1fr 280px}
+.cl-row.has-ph{grid-template-rows:auto 1fr}
+.cl-row p{align-self:start}
+.rph{grid-column:3;grid-row:1/span 2;aspect-ratio:16/10;overflow:hidden}
+.rph img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.16,1,.3,1)}
+.cl-row:hover .rph img{transform:scale(1.06)}
+@media(max-width:560px){.cl-row,.cl-row.has-ph{grid-template-columns:48px 1fr;grid-template-rows:auto}.rph{grid-column:2;grid-row:3;aspect-ratio:16/9}}
+.cl-row:hover{transform:translateX(8px)}
+.cl-row .n{font-family:Anton,sans-serif;font-size:40px;line-height:1;grid-row:span 2}
+.cl-row h3{font-size:22px;font-weight:900;line-height:1.35}
+.cl-row h3 small{white-space:nowrap;display:inline-block;font-family:Anton,sans-serif;font-weight:400;font-size:13px;letter-spacing:.12em;color:#8a6d00;margin-left:10px}
+@media(max-width:600px){.cl-row h3 small{display:block;margin:4px 0 0}}
+.cl-row p{font-size:14.5px;color:#4a443c}
+.cl-row p b{color:var(--ink)}
+
+/* schedule */
+.tabs{overflow-x:auto;display:flex;gap:0;margin-bottom:0;border-bottom:1px solid var(--rule)}
+.tab{white-space:nowrap;background:none;border:0;color:var(--mut);padding:12px 20px;cursor:pointer;font:700 15px "Noto Sans JP";border-bottom:3px solid transparent;margin-bottom:-1px}
+.tab.on{color:var(--tx);border-bottom-color:var(--y)}
+.tbl{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;min-width:720px;font-size:13px}
+th,td{border-bottom:1px solid var(--rule);padding:14px 8px;text-align:center;vertical-align:middle}
+thead th{font-family:Anton,sans-serif;font-weight:400;font-size:18px;letter-spacing:.06em;color:var(--tx);padding-top:20px}
+thead th small{display:block;font:700 11px "Noto Sans JP";color:var(--mut)}
+tbody th{font-family:Anton,sans-serif;font-weight:400;font-size:16px;color:var(--y);white-space:nowrap;text-align:left}
+td{color:#5d574f}
+td.x{color:var(--tx);font-weight:700;background:rgba(245,213,71,.07)}
+td.x small{display:block;color:var(--y);font-size:11px}
+.pane{display:none}.pane.on{display:block}
+
+/* coaches */
+
+/* price：レシート */
+.price{display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:start}
+.pl{list-style:none;border-top:2px solid var(--ink)}
+.pl li{display:flex;align-items:baseline;gap:10px;padding:16px 0;border-bottom:1px solid #cfc8bb}
+.pl li .nm{font-weight:700}
+.pl li .dot{flex:1;border-bottom:2px dotted #b9b1a3;transform:translateY(-4px)}
+.pl b{font-family:Anton,sans-serif;font-weight:400;font-size:28px;white-space:nowrap;line-height:1}
+.pl b .wv{font:700 18px "Noto Sans JP"}
+.pl b small{font:700 12px "Noto Sans JP";color:#6b645a;margin-left:2px}
+.ex{background:var(--ink);color:var(--tx);padding:34px 30px}
+.ex .lb{font-family:Anton,sans-serif;letter-spacing:.2em;font-size:13px;color:var(--y)}
+.ex .sum{font-family:Anton,sans-serif;font-size:clamp(46px,5.4vw,66px);line-height:1;margin:12px 0 10px;color:var(--y);display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 12px}
+.ex .sum s{font-size:.5em;color:#a39d94;text-decoration:line-through 3px var(--red)}
+.ex .sum .ar{font-size:.4em;color:var(--red)}
+.ex s,.pl s{text-decoration:line-through 2px var(--red)}
+.camp{display:inline-block;margin-top:14px;background:var(--red);color:#fff;font-weight:900;font-size:14px;padding:6px 12px}
+.camp b{font-weight:900}
+.pl s{color:#8a8378;font-size:.7em}
+.pl .rd{color:var(--red)}
+.tag{font-style:normal;background:var(--red);color:#fff;font-size:12px;font-weight:900;padding:2px 8px;margin-left:6px;white-space:nowrap}
+.ex ul{list-style:none;margin-top:18px;font-size:14px;color:#cfc8bd}
+.ex li{padding:8px 0;border-top:1px solid var(--rule)}
+@media(max-width:860px){.price{grid-template-columns:1fr;gap:36px}}
+
+/* trial */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid var(--ink)}
+.step{padding:26px 26px 26px 0}
+.step+.step{padding-left:26px;border-left:1px solid #cfc8bb}
+.step .n{font-family:Anton,sans-serif;font-size:64px;line-height:1;color:var(--ink)}
+.step h3{font-size:20px;font-weight:900;margin-top:10px}
+.step p{font-size:14.5px;color:#4a443c;margin-top:4px}
+.trial-cta{display:flex;flex-wrap:wrap;align-items:center;gap:24px;margin-top:44px}
+.trial-cta .btn{font-size:17px;padding:20px 28px}
+.sp{padding:90px 0;border-top:1px solid var(--rule)}
+.spw{display:grid;grid-template-columns:1fr 1.2fr;gap:56px;align-items:end}
+.sp p{color:#d9d3c9}
+@media(max-width:860px){.spw{grid-template-columns:1fr;gap:20px}}
+.tel{font-family:Anton,sans-serif;font-size:26px;letter-spacing:.04em}
+.mail{font-weight:700;font-size:15px;border-bottom:2px solid var(--y);word-break:break-all}
+.nw{white-space:nowrap}
+.ib{display:inline-block;white-space:nowrap}
+.match{text-wrap:wrap}
+@media(max-width:800px){.steps{grid-template-columns:1fr}.step,.step+.step{padding:22px 0;border-left:0;border-top:1px solid #cfc8bb}.step:first-child{border-top:0}}
+
+/* about / access */
+.ab{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.ab .ph{overflow:hidden;aspect-ratio:4/3}
+.ab .ph img{width:100%;height:130%;object-fit:cover;object-position:center top;filter:grayscale(.3)}
+.ab p{margin-top:16px}
+.dojos{margin-top:22px;font-family:Anton,sans-serif;font-size:20px;letter-spacing:.06em;color:var(--mut)}
+.dojos b{font-weight:400;color:var(--y)}
+@media(max-width:860px){.ab{grid-template-columns:1fr;gap:32px}}
+.acc{display:grid;grid-template-columns:1fr 1.4fr;gap:40px;align-items:start}
+.acc .ad{font-size:22px;font-weight:900;line-height:1.5;margin-top:14px}
+.map{min-height:360px;background:var(--ink2)}
+.map iframe{width:100%;min-height:360px;border:0;filter:grayscale(.7) contrast(1.05)}
+@media(max-width:860px){.acc{grid-template-columns:1fr}}
+
+.final{padding:150px 0;text-align:left;overflow:hidden}
+.final .bg{position:absolute;inset:-10% 0;z-index:0}
+.final .bg img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) brightness(.35)}
+.final .wrap{position:relative;z-index:1}
+.final h2{font-size:clamp(34px,6vw,76px);font-weight:900;line-height:1.15;margin-top:16px}
+footer{padding:36px 0 120px;font-size:12px;color:#7b746a;border-top:1px solid var(--rule)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+/* sticky / chat */
+.sticky{position:fixed;left:12px;right:12px;bottom:12px;z-index:60;transform:translateY(140%);transition:transform .45s cubic-bezier(.16,1,.3,1)}
+.sticky.on{transform:none}
+.sticky .btn{width:100%;justify-content:center;padding:15px}
+@media(min-width:961px){.sticky{display:none}}
+.cbtn{position:fixed;right:18px;bottom:18px;z-index:70;width:68px;height:68px;padding:0;border-radius:50%;background:#070707;border:2px solid var(--y);cursor:pointer;transition:transform .25s,bottom .45s;box-shadow:0 6px 18px rgba(0,0,0,.45)}
+.cbtn:hover{transform:translateY(-3px) rotate(-4deg)}
+.cbtn .face{display:block;width:100%;height:100%;border-radius:50%;overflow:hidden;animation:talk 3.2s ease-in-out infinite}
+.cbtn .face img{width:100%;height:100%;object-fit:cover;transform:scale(1.18)}
+.cbtn .say{position:absolute;right:calc(100% + 12px);bottom:30px;background:var(--y);color:var(--ink);font:900 13px/1.3 "Noto Sans JP",sans-serif;padding:8px 11px;white-space:nowrap;border-radius:2px;transition:opacity .25s,transform .25s}
+.cbtn .say::after{content:"";position:absolute;right:-8px;bottom:8px;border:5px solid transparent;border-left:8px solid var(--y);border-right:0}
+.cbtn .say i{display:inline-flex;gap:3px;margin-left:6px;vertical-align:middle}
+.cbtn .say i b{width:4px;height:4px;border-radius:50%;background:var(--ink);animation:dot 1.2s infinite}
+.cbtn .say i b:nth-child(2){animation-delay:.15s}.cbtn .say i b:nth-child(3){animation-delay:.3s}
+body.chat-open .cbtn .say{opacity:0;transform:translateX(8px);pointer-events:none}
+@keyframes talk{0%,62%,100%{transform:none}66%{transform:scale(1.06) rotate(-3deg)}70%{transform:scale(.97)}74%{transform:scale(1.05) rotate(2deg)}78%{transform:none}}
+@keyframes dot{0%,60%,100%{opacity:.25;transform:none}30%{opacity:1;transform:translateY(-2px)}}
+.av{width:30px;height:30px;border-radius:50%;flex:none;overflow:hidden;background:#070707;border:1px solid var(--y)}
+.av img{width:100%;height:100%;object-fit:cover;transform:scale(1.18)}
+.mrow{display:flex;gap:8px;align-items:flex-start;max-width:92%}
+.mrow .m{max-width:none;min-width:0}
+.cl .m{word-break:keep-all;overflow-wrap:anywhere;line-break:strict}
+.chh .who b{font:900 15px/1.3 "Noto Sans JP",sans-serif;letter-spacing:.04em}
+.chh .who{display:flex;align-items:center;gap:10px}.chh .who .av{width:38px;height:38px}
+body.sticky-on .cbtn{bottom:88px}
+@media(prefers-reduced-motion:reduce){.cbtn .face,.cbtn .say i b{animation:none}}
+@media(min-width:961px){body.sticky-on .cbtn{bottom:18px}}
+.chat{position:fixed;right:18px;bottom:86px;z-index:80;width:min(380px,calc(100vw - 24px));height:min(560px,calc(100svh - 120px));background:var(--ink2);border:1px solid #4a443c;display:flex;flex-direction:column;overflow:hidden;opacity:0;pointer-events:none;transform:translateY(16px);transition:opacity .3s,transform .3s}
+.chat.open{opacity:1;pointer-events:auto;transform:none}
+@media(max-width:600px){.chat{right:12px;bottom:12px;height:calc(100svh - 90px)}}
+.chh{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-bottom:1px solid var(--rule)}
+.chh b{font-family:Anton,sans-serif;font-weight:400;letter-spacing:.08em}.chh small{display:block;font-size:11px;color:var(--mut)}
+.chh button{background:none;border:0;color:#bdb6ab;font-size:24px;cursor:pointer;line-height:1}
+.cl{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px}
+.m{max-width:86%;padding:10px 13px;font-size:14px;line-height:1.7;white-space:pre-wrap}
+.m.b{background:#2a2622;align-self:flex-start}
+.m.u{background:var(--y);color:var(--ink);align-self:flex-end}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{background:none;border:1px solid #5a544c;color:#d9d3c9;padding:6px 10px;font:12px "Noto Sans JP";cursor:pointer;text-align:left}
+.chip:hover{border-color:var(--y);color:var(--y)}
+.cf{display:flex;gap:8px;padding:10px;border-top:1px solid var(--rule)}
+.cf input{flex:1;min-width:0;background:var(--ink);border:1px solid #4a443c;color:var(--tx);padding:10px 12px;font:16px "Noto Sans JP"}
+.cf button{background:var(--y);color:var(--ink);border:0;padding:0 16px;font-weight:900;cursor:pointer}
+
+/* 出現（concierge-web の Reveal と同じ方式） */
+[data-reveal]{opacity:0}
+[data-reveal].is-visible{animation:rise .9s cubic-bezier(.16,1,.3,1) both}
+[data-reveal="left"].is-visible{animation-name:sl}
+[data-reveal="right"].is-visible{animation-name:sr}
+[data-reveal="zoom"].is-visible{animation-name:zo}
+@keyframes rise{from{opacity:0;transform:translateY(36px)}to{opacity:1;transform:none}}
+@keyframes sl{from{opacity:0;transform:translateX(-48px)}to{opacity:1;transform:none}}
+@keyframes sr{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}
+@keyframes zo{from{opacity:0;transform:scale(1.06)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}[data-reveal]{opacity:1}}
+</style>
+<noscript><style>[data-reveal]{opacity:1}</style></noscript>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><symbol id="lineic" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 4 3.6 7.3 8.4 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8.1-6C21.4 14.2 22 12.7 22 11c0-4.4-4.5-8-10-8zM8.3 13.4H6.4c-.3 0-.5-.2-.5-.5V9.1c0-.3.2-.5.5-.5s.5.2.5.5v3.3h1.4c.3 0 .5.2.5.5s-.2.5-.5.5zm2-.5c0 .3-.2.5-.5.5s-.5-.2-.5-.5V9.1c0-.3.2-.5.5-.5s.5.2.5.5v3.8zm4.6 0c0 .2-.1.4-.3.5h-.2c-.2 0-.3-.1-.4-.2l-1.9-2.6v2.3c0 .3-.2.5-.5.5s-.5-.2-.5-.5V9.1c0-.2.1-.4.3-.5h.2c.2 0 .3.1.4.2l1.9 2.6V9.1c0-.3.2-.5.5-.5s.5.2.5.5v3.8zm3.1-2.4c.3 0 .5.2.5.5s-.2.5-.5.5h-1.4v.9h1.4c.3 0 .5.2.5.5s-.2.5-.5.5h-1.9c-.3 0-.5-.2-.5-.5V9.1c0-.3.2-.5.5-.5h1.9c.3 0 .5.2.5.5s-.2.5-.5.5h-1.4v.9h1.4z"/></symbol></svg>
+
+<header id="hd"><div class="wrap hd">
+<button class="logo-btn" id="mbtn" aria-expanded="false" aria-controls="mnu"><img src="img/logo.png" alt="OPTIMUS GYM"><span class="mb-l">MENU<i></i></span></button>
+<nav><a href="#path"><span class="ja">プロへの​道</span><span class="en">Road to Pro</span></a><a href="#class"><span class="ja">クラス</span><span class="en">Classes</span></a><a href="#schedule"><span class="ja">スケジュール</span><span class="en">Schedule</span></a><a href="#coach"><span class="ja">コーチ</span><span class="en">Coaches</span></a><a href="#price"><span class="ja">料金</span><span class="en">Price</span></a><a href="#access"><span class="ja">アクセス</span><span class="en">Access</span></a></nav>
+<div class="hr"><div class="lang"><button data-l="ja" class="on">JA</button><button data-l="en">EN</button></div>
+<a class="btn line js-line" href="#trial"><svg><use href="#lineic"/></svg><span class="ja">体験予約</span><span class="en">Free Trial</span></a></div>
+</div>
+<div class="mnu" id="mnu" hidden><div class="wrap"><ol>
+<li><a href="#top"><b>TOP</b><span class="ja">トップ</span><span class="en">Top</span></a></li>
+<li><a href="#path"><b>ROAD</b><span class="ja">プロへの​道</span><span class="en">Road to Pro</span></a></li>
+<li><a href="#coach"><b>COACHES</b><span class="ja">コーチ</span><span class="en">Coaches</span></a></li>
+<li><a href="#film"><b>MOVIE</b><span class="ja">練習の​動画</span><span class="en">Training video</span></a></li>
+<li><a href="#class"><b>CLASSES</b><span class="ja">クラス</span><span class="en">Classes</span></a></li>
+<li><a href="#schedule"><b>SCHEDULE</b><span class="ja">スケジュール</span><span class="en">Schedule</span></a></li>
+<li><a href="#price"><b>PRICE</b><span class="ja">料金</span><span class="en">Price</span></a></li>
+<li><a href="#trial"><b>FREE TRIAL</b><span class="ja">体験の​流れ</span><span class="en">Free trial</span></a></li>
+<li><a href="#about"><b>ABOUT</b><span class="ja">OPTIMUSに​ついて</span><span class="en">About us</span></a></li>
+<li><a href="#sponsor"><b>SPONSOR</b><span class="ja">スポンサー募集</span><span class="en">Sponsors</span></a></li>
+<li><a href="#access"><b>ACCESS</b><span class="ja">アクセス・駐車場</span><span class="en">Access &amp; parking</span></a></li>
+</ol></div></div>
+</header>
+
+<div class="hero" id="top">
+<div class="bg" data-parallax="0.25"><img src="img/hero.jpg" alt=""></div>
+<div class="wrap">
+<div class="kick" data-reveal>OPTIMUS GYM — FUKAYA, SAITAMA</div>
+<h1 data-reveal data-reveal-delay="80"><span class="ja">初心者から、<br>プロまで。<br><em>何歳から​でも</em><br>夢を​追える。</span><span class="en">From day one<br>to <em>the pros.</em><br>At any age.</span></h1>
+<p class="lead" data-reveal data-reveal-delay="160"><span class="ja">埼玉・深谷の​総合格闘技ジム。​代表の​ダニエル、​パンクラス王者の​田嶋、​プロMMAで​9勝・うち6勝を​KOと​一本で​勝ち切る​右京。​プロの​コーチ陣から、​運動不足の​大人も、​キッズも、​プロを​目指す人も、​同じ​マットで​直接教わる。</span><span class="en">An MMA gym in Fukaya, Saitama. Head coach Daniel, PANCRASE champion Ryo Tajima and pro fighter Ukyo Abe (9 pro MMA wins, 6 by KO or submission) teach beginners, kids and future pros on the same mat.</span></p>
+<div class="cta" data-reveal data-reveal-delay="240"><a class="btn line js-line" href="#trial"><svg><use href="#lineic"/></svg><span class="ja">体験申し込みは​コチラ​（無料）</span><span class="en">Book a free trial on LINE</span><span class="arw">→</span></a><a class="tl" href="#path"><span class="ja">OPTIMUSを​知る</span><span class="en">Learn more</span><span class="arw">→</span></a></div>
+<p class="note" data-reveal data-reveal-delay="280"><span class="ja">体験・​見学1回無料 ／ 無料駐車場完備で​車で​そのまま​来られます</span><span class="en">First class free / Free on-site parking</span></p>
+<div class="stats">
+<div class="stat" data-reveal data-reveal-delay="300"><b><i>¥</i><span class="cnt" data-to="0">0</span></b><span class="ja">体験・​見学1回</span><span class="en">First trial class</span></div>
+<div class="stat" data-reveal data-reveal-delay="380"><b><i>PRO</i></b><span class="ja">王者・プロの​コーチ陣</span><span class="en">Champion &amp; pro coaches</span></div>
+<div class="stat" data-reveal data-reveal-delay="460"><b><span class="cnt" data-to="3">0</span><i> ROADS</i></b><span class="ja">ONE・RIZIN・<span class="nw">UFCへの​道</span></span><span class="en">Paths to ONE, RIZIN, UFC</span></div>
+<div class="stat" data-reveal data-reveal-delay="540"><b><i>KIDS</i></b><span class="ja">小3から。​月・水・木・土 18:30〜</span><span class="en">Age 8+. Mon/Wed/Thu/Sat 18:30–</span></div>
+<div class="stat" data-reveal data-reveal-delay="620"><b><span class="cnt" data-to="6">0</span><i> DAYS</i></b><span class="ja">月〜土 朝10:00〜／夜20:10〜</span><span class="en">Mon–Sat, mornings 10:00 &amp; nights 20:10</span></div>
+</div>
+</div>
+</div>
+
+<div class="mq" aria-hidden="true"><div><span>CROSS OVER → ONE</span><span>DEEP → RIZIN</span><span>PANCRASE → UFC</span><span>MMA</span><span>KICKBOXING</span><span>GRAPPLING</span><span>KIDS</span><span>FITNESS</span><span>CROSS OVER → ONE</span><span>DEEP → RIZIN</span><span>PANCRASE → UFC</span><span>MMA</span><span>KICKBOXING</span><span>GRAPPLING</span><span>KIDS</span><span>FITNESS</span></div></div>
+
+<section id="path"><div class="wrap">
+<div class="head"><div class="eyebrow" data-reveal>ROAD TO THE TOP</div><h2 class="h2" data-reveal data-reveal-delay="80"><span class="ja">練習生が、<br>すぐ​試合に​出られる。<br>その先は、<span class="y">世界の​舞台</span>へ。</span><span class="en">Members get their first fight fast.<br>The road leads to the <span class="y">world stage.</span></span></h2><p class="sub" data-reveal data-reveal-delay="160"><span class="ja">阿部右京コーチが​マッチメイクを​担当。​アマチュアの​大会に、​すぐ​出られる​手は​ずが​整っています。</span><span class="en">Coach Ukyo Abe handles matchmaking, so members can enter amateur events quickly.</span></p></div>
+<div class="road">
+<div class="rw" data-reveal="left"><div class="f">CROSS OVER</div><div class="ar"><b>→</b><span class="ja">つながる​先</span><span class="en">LEADS TO</span></div><div class="t">ONE</div></div>
+<div class="rw" data-reveal="left" data-reveal-delay="90"><div class="f">DEEP</div><div class="ar"><b>→</b><span class="ja">つながる​先</span><span class="en">LEADS TO</span></div><div class="t">RIZIN</div></div>
+<div class="rw" data-reveal="left" data-reveal-delay="180"><div class="f">PANCRASE</div><div class="ar"><b>→</b><span class="ja">つながる​先</span><span class="en">LEADS TO</span></div><div class="t">UFC</div></div>
+</div>
+<p class="match" data-reveal><span class="ja"><span class="ib">「強くなりたい」だけでなく、</span><wbr><span class="ib">「試合に​出てみたい」</span><wbr><span class="ib">「プロになりたい」まで。</span><br><span class="ib">ここから​先の​道は、</span><wbr><span class="ib">コーチが​一緒に​つくります。</span></span><span class="en">Whether you want to get stronger, try your first fight, or turn pro — your coaches build that road with you.</span></p>
+</div></section>
+
+<section class="champ" id="coach"><div class="wrap">
+<div class="ghost" aria-hidden="true">COACHES</div>
+<div class="head"><div class="eyebrow" data-reveal>THE COACHES</div>
+<h2 class="h2" data-reveal data-reveal-delay="60" style="position:relative"><span class="ja">教えるのは、<br>本物の<span class="y">強さ</span>を​知る​プロの​コーチ陣。</span><span class="en">Pro coaches who know<br>what <span class="y">real strength</span> is.</span></h2></div>
+<div class="coaches">
+<div class="co" data-reveal data-reveal-delay="60"><div class="cimg"><img src="img/c_daniel.jpg" alt="小池ダニエル Daniel Koike" loading="lazy"></div><div class="pf">
+<h3><small><span class="ja">代表コーチ ／ 月〜土</span><span class="en">Head coach / Mon–Sat</span></small><span class="ja">小池 ダニエル</span><span class="en">Daniel Koike</span></h3>
+<p><span class="ja">OPTIMUS GYM 深谷の​代表。</span><span class="en">Head of OPTIMUS GYM Fukaya.</span></p></div></div>
+<div class="co" data-reveal data-reveal-delay="120"><div class="cimg"><img src="img/c_tajima.jpg" alt="田嶋椋 Ryo Tajima" loading="lazy"></div><div class="pf">
+<h3><small><span class="ja">プロコーチ ／ 毎週​水曜 20:10〜</span><span class="en">Pro coach / Wednesdays 20:10–</span></small><span class="ja">田嶋 椋</span><span class="en">Ryo Tajima</span></h3>
+<ul class="facts">
+<li><i>01</i><span><span class="ja">現パンクラス バンタム級 6代目王者</span><span class="en">Reigning PANCRASE Bantamweight Champion (6th)</span></span></li>
+<li><i>02</i><span><span class="ja">Road to UFC 決勝を​2027年2月7日に​控える</span><span class="en">Headed to the Road to UFC final on Feb 7, 2027</span></span></li>
+<li><i>03</i><span><span class="ja">2022年 パンクラス ネオブラッドトーナメント バンタム級 優勝・MVP</span><span class="en">2022 PANCRASE Neo Blood Tournament Bantamweight winner and MVP</span></span></li>
+</ul></div></div>
+<div class="co" data-reveal data-reveal-delay="60"><div class="cimg"><img src="img/c_ukyo.jpg" alt="阿部右京 Ukyo Abe" loading="lazy"></div><div class="pf">
+<h3><small><span class="ja">プロMMA選手・​プロコーチ ／ 毎週木曜 20:10〜</span><span class="en">Pro MMA fighter &amp; pro coach / Thursdays 20:10–</span></small><span class="ja">阿部 右京</span><span class="en">Ukyo Abe</span></h3>
+<ul class="facts">
+<li><i>01</i><span><span class="ja">プロMMA戦績 9勝8敗1分。<span class="nw">修斗・</span><wbr><span class="nw">パンクラス・</span><wbr><span class="nw">GRACHAN・</span><wbr><span class="nw">HEAT・</span><wbr><span class="nw">韓国ROAD FCで​戦う</span></span><span class="en">Pro MMA record 9-8-1 in Shooto, PANCRASE, GRACHAN, HEAT and ROAD FC (Korea)</span></span></li>
+<li><i>02</i><span><span class="ja">9勝の​うち6勝が​KO・​一本​勝ち</span><span class="en">6 of 9 wins by KO or submission</span></span></li>
+<li><i>03</i><span><span class="ja">全日​本アマチュア修斗 ウェルター級 準優勝／パンクラス プロアマ キャッチレスリング -80kg級 優勝</span><span class="en">All-Japan Amateur Shooto Welterweight runner-up / PANCRASE Pro-Am Catch Wrestling -80kg champion</span></span></li>
+</ul></div></div>
+<div class="co" data-reveal data-reveal-delay="120"><div class="cimg"><img src="img/c_ota.jpg" alt="太田純一 Junichi Ota" loading="lazy"></div><div class="pf">
+<h3><small><span class="ja">OOTA DOJO 総代表</span><span class="en">Head of OOTA DOJO</span></small><span class="ja">太田 純一</span><span class="en">Junichi Ota</span></h3>
+<ul class="facts">
+<li><i>01</i><span><span class="ja">MMA戦績 16勝9敗。​パンクラスを​主戦場に​戦う</span><span class="en">MMA record 16-9, mainly in PANCRASE</span></span></li>
+<li><i>02</i><span><span class="ja">パンクラス公認審判員・K-1公式審判員</span><span class="en">Official PANCRASE and K-1 referee</span></span></li>
+<li><i>03</i><span><span class="ja">ブラジリアン柔術 黒帯</span><span class="en">Brazilian jiu-jitsu black belt</span></span></li>
+</ul></div></div>
+</div>
+</div></section>
+
+<section id="film"><div class="wrap">
+<div class="head"><div class="eyebrow" data-reveal>INSIDE THE GYM</div><h2 class="h2" data-reveal data-reveal-delay="80"><span class="ja">練習の​空気を、​見てください。</span><span class="en">Feel the energy of training.</span></h2></div>
+<div class="films">
+<figure data-reveal><div class="film yt" data-id="v9cT9BorUfg"><img src="https://i.ytimg.com/vi/v9cT9BorUfg/hqdefault.jpg" alt="" loading="lazy"><div class="play">PLAY</div></div><figcaption><span class="ja">OOTA DOJOグループの​大人の​打撃練習<span class="nw">（MATCHO）</span></span><span class="en">Adults striking practice at OOTA DOJO group (MATCHO)</span></figcaption></figure>
+<figure data-reveal data-reveal-delay="120"><div class="film yt" data-id="pWP5i1zLANk"><img src="https://i.ytimg.com/vi/pWP5i1zLANk/hqdefault.jpg" alt="" loading="lazy"><div class="play">PLAY</div></div><figcaption><span class="ja">OOTA DOJOキッズの​練習風景<span class="nw">（KKC キッズ格闘技チャンネル）</span></span><span class="en">Kids training at OOTA DOJO (KKC Kids Fight Channel)</span></figcaption>
+<p style="margin-top:22px"><a class="tl" href="https://www.instagram.com/optimusgym.mma/" target="_blank" rel="noopener"><span class="ja">毎日の​練習は​Instagramで</span><span class="en">Daily training on Instagram</span><span class="arw">→</span></a></p></figure>
+</div>
+</div></section>
+
+<section id="class" class="paper cut"><div class="wrap">
+<div class="head"><div class="eyebrow" data-reveal>CLASSES</div><h2 class="h2" data-reveal data-reveal-delay="80"><span class="ja">自分に​合う​入口から。</span><span class="en">Start where you fit.</span></h2><p class="sub" data-reveal data-reveal-delay="160"><span class="ja">小学3年生から​シニアまで。​フィットネスから​選手育成まで。​スパーリング​（対人）は​希望者のみです。</span><span class="en">From 3rd graders to seniors, fitness to fighters. Sparring is optional.</span></p></div>
+<div class="cls-g">
+
+<div>
+<div class="cl-row has-ph" data-reveal><div class="n">01</div><div class="rph"><img src="img/cls_kick.jpg" alt="" loading="lazy"></div><h3><span class="ja">MMA・キック・​グラップリング</span><span class="en">MMA, Kickboxing, Grappling</span><small>GENERAL / FIGHTERS</small></h3><p><span class="ja"><span class="nw">総合格闘技・</span><wbr><span class="nw">キックボクシング・</span><wbr><span class="nw">グラップリング。</span><wbr><span class="nw"><b>通い​放題</b>。</span></span><span class="en">MMA, kickboxing and grappling. <b>Unlimited classes.</b></span></p></div>
+<div class="cl-row has-ph" data-reveal data-reveal-delay="70"><div class="n">02</div><div class="rph"><img src="img/cls_fitkick.jpg" alt="" loading="lazy"></div><h3><span class="ja">フィットネスキック</span><span class="en">Fitness Kickboxing</span><small>FITNESS</small></h3><p><span class="ja">対人戦なし。​基礎・ミット打ち・インターバルで、​ダイエットと​ストレス発散に。​開催日時は​LINEで​お問い合わせ​ください。</span><span class="en">No sparring. Pads and intervals for weight loss and stress relief. Ask us on LINE for class times.</span></p></div>
+<div class="cl-row has-ph" data-reveal data-reveal-delay="140"><div class="n">03</div><div class="rph"><img src="img/kids.jpg" alt="" loading="lazy"></div><h3><span class="ja">キッズクラス</span><span class="en">Kids Class</span><small>AGE 8+</small></h3><p><span class="ja"><b>小3から。​月・水・木・土 18:30〜19:45</b>。​週1回 月6,000円から、​週4回まで​選べます。​水曜は​田嶋コーチ、​木曜は​右京コーチ。</span><span class="en"><b>From 3rd grade. Mon/Wed/Thu/Sat 18:30–19:45.</b> From ¥6,000/month (once a week), up to 4x a week. Coach Tajima on Wednesdays, Coach Ukyo on Thursdays.</span></p></div>
+<div class="cl-row has-ph" data-reveal data-reveal-delay="210"><div class="n">04</div><div class="rph"><img src="img/cls_women.jpg" alt="" loading="lazy"></div><h3><span class="ja">女性フィットネス</span><span class="en">Women's Fitness</span><small>WOMEN ONLY</small></h3><p><span class="ja"><b>女性限定。​月・水・​金 9:00〜10:00</b>。​週1回 月10,000円から。</span><span class="en"><b>Women only. Mon/Wed/Fri 9:00–10:00.</b> From ¥10,000/month.</span></p></div>
+<div class="cl-row" data-reveal data-reveal-delay="350"><div class="n">05</div><h3><span class="ja">ビジター・​出稽古</span><span class="en">Visitors &amp; Drop-ins</span><small>PAY PER VISIT</small></h3><p><span class="ja">ビジターは​1回1時間 3,500円。​出稽古は​1回3,000円。​OOTA DOJO各支部の​方は​出稽古無料。</span><span class="en">Visitors (non-members) ¥3,500 per hour. Cross-training from another gym ¥3,000. Free for OOTA DOJO members.</span></p></div>
+</div>
+</div>
+</div></section>
+
+<section id="schedule"><div class="wrap">
+<div class="head"><div class="eyebrow" data-reveal>SCHEDULE</div><h2 class="h2" data-reveal data-reveal-delay="80"><span class="ja">週間スケジュール</span><span class="en">Weekly Schedule</span></h2></div>
+<div class="tabs" data-reveal><button class="tab on" data-p="pa"><span class="ja">プロ＆アマ練習</span><span class="en">Pro &amp; Amateur</span></button><button class="tab" data-p="fk"><span class="ja">フィットネス＆キッズ</span><span class="en">Fitness &amp; Kids</span></button></div>
+<div data-reveal data-reveal-delay="80">
+<div class="pane on" id="pa"><div class="tbl"><table>
+<thead><tr><th></th><th>MON<small>月</small></th><th>TUE<small>火</small></th><th>WED<small>水</small></th><th>THU<small>木</small></th><th>FRI<small>金</small></th><th>SAT<small>土</small></th><th>SUN<small>日</small></th></tr></thead>
+<tbody>
+<tr><th>10:00–12:00</th><td class="x">MMA<br>KICK<br>GRAPPLING</td><td>—</td><td class="x">MMA<br>KICK<br>GRAPPLING</td><td class="x">MMA<br>KICK<br>GRAPPLING</td><td class="x">MMA<br>KICK<br>GRAPPLING</td><td class="x">MMA<br>KICK<br>GRAPPLING</td><td>—</td></tr>
+<tr><th>20:10–22:00</th><td class="x">MMA<br>KICK<br>GRAPPLING</td><td class="x">MMA<br>KICK<br>GRAPPLING</td><td class="x"><small><span class="ja">田嶋コーチ</span><span class="en">Coach Tajima</span></small>MMA<br>KICK<br>GRAPPLING</td><td class="x"><small><span class="ja">右京コーチ</span><span class="en">Coach Ukyo</span></small>MMA<br>KICK<br>GRAPPLING</td><td class="x">MMA<br>KICK<br>GRAPPLING</td><td class="x">MMA<br>KICK<br>GRAPPLING</td><td>—</td></tr>
+</tbody></table></div></div>
+<div class="pane" id="fk"><div class="tbl"><table>
+<thead><tr><th></th><th>MON<small>月</small></th><th>TUE<small>火</small></th><th>WED<small>水</small></th><th>THU<small>木</small></th><th>FRI<small>金</small></th><th>SAT<small>土</small></th><th>SUN<small>日</small></th></tr></thead>
+<tbody>
+<tr><th>9:00–10:00</th><td class="x"><span class="ja">女性</span><span class="en">WOMEN</span><br>FITNESS</td><td>—</td><td class="x"><span class="ja">女性</span><span class="en">WOMEN</span><br>FITNESS</td><td>—</td><td class="x"><span class="ja">女性</span><span class="en">WOMEN</span><br>FITNESS</td><td>—</td><td>—</td></tr>
+<tr><th>18:30–19:45</th><td class="x">KIDS<br>KICK<br>GRAPPLING</td><td>—</td><td class="x"><small><span class="ja">田嶋コーチ</span><span class="en">Coach Tajima</span></small>KIDS<br>KICK<br>GRAPPLING</td><td class="x"><small><span class="ja">右京コーチ</span><span class="en">Coach Ukyo</span></small>KIDS<br>KICK<br>GRAPPLING</td><td>—</td><td class="x">KIDS<br>KICK<br>GRAPPLING</td><td>—</td></tr>
+</tbody></table></div></div>
+</div>
+<p class="note"><span class="ja">表は​横に​スクロールできます。​出稽古や​試合で​不在の​ことが​ある​ため、​来店前に​LINEで​ご連絡ください。</span><span class="en">Scroll the table sideways. Coaches may be away for fights — please message us on LINE before visiting.</span></p>
+</div></section>
+
+
+<section id="price" class="paper"><div class="wrap">
+<div class="head"><div class="eyebrow" data-reveal>PRICE</div><h2 class="h2" data-reveal data-reveal-delay="80"><span class="ja">料金（すべて​税込）</span><span class="en">Pricing (tax included)</span></h2></div>
+<div class="price">
+<ul class="pl" data-reveal="left">
+<li><span class="nm"><span class="ja">選手育​成​（通い​放題）</span><span class="en">Fighter program (unlimited)</span></span><span class="dot"></span><b>¥15,000<small>/<span class="ja">月</span><span class="en">mo</span></small></b></li>
+<li><span class="nm"><span class="ja">一般​（通い​放題）</span><span class="en">General (unlimited)</span></span><span class="dot"></span><b>¥12,000<small>/<span class="ja">月</span><span class="en">mo</span></small></b></li>
+<li><span class="nm"><span class="ja">フィットネス会員</span><span class="en">Fitness</span></span><span class="dot"></span><b>¥10,000<span class="wv">〜</span><small>/<span class="ja">月</span><span class="en">mo</span></small></b></li>
+<li><span class="nm"><span class="ja">キッズ​（週1回〜）</span><span class="en">Kids (1x/week+)</span></span><span class="dot"></span><b>¥6,000<span class="wv">〜</span><small>/<span class="ja">月</span><span class="en">mo</span></small></b></li>
+<li><span class="nm"><span class="ja">入会金</span><span class="en">Enrollment fee</span> <em class="tag"><span class="ja">今なら​無料</span><span class="en">Free now</span></em></span><span class="dot"></span><b><s>¥10,000</s> <span class="rd">¥0</span></b></li>
+<li><span class="nm"><span class="ja">ビジター​（1回1時間）</span><span class="en">Visitor, non-member (1 hour)</span></span><span class="dot"></span><b>¥3,500</b></li>
+</ul>
+<div class="ex" data-reveal="right">
+<div class="lb">EXAMPLE</div>
+<div style="margin-top:8px;font-weight:700"><span class="ja">一般の​大人の​方が​入会する​場合</span><span class="en">Adult general membership, first payment</span></div>
+<div class="camp"><span class="ja"><b class="camp-ja">今月末</b>までの​ご入会で、<span class="nw">入会金 無料</span></span><span class="en">Join by <b class="camp-en">the end of this month</b>: no enrollment fee</span></div>
+<div class="sum"><s>¥34,000</s><span class="ar">→</span>¥24,000</div>
+<div style="font-size:13px;color:#cfc8bd"><span class="ja">月会費2か​月分 24,000円 ＋ <span class="nw">入会金 <s>10,000円</s> 0円</span></span><span class="en">2 months' fees ¥24,000 + enrollment <s>¥10,000</s> ¥0</span></div>
+<ul><li><span class="ja">体験・​見学は​1回無料</span><span class="en">First trial is free</span></li><li><span class="ja">お支払いは​現金​（手渡し）か​PayPayマネー</span><span class="en">Pay in cash (in person) or with PayPay Money</span></li><li><span class="ja">シャワーは​月＋500円</span><span class="en">Shower +¥500/month</span></li><li><span class="ja">OOTA DOJOの​会員は、​熊谷・​大宮・​秩父の​各道場にも​通えます</span><span class="en">Members can also train at OOTA DOJO Kumagaya, Omiya and Chichibu</span></li></ul>
+</div>
+</div>
+</div></section>
+
+<section id="trial" class="paper" style="padding-top:20px"><div class="wrap">
+<div class="head"><div class="eyebrow" data-reveal>FREE TRIAL</div><h2 class="h2" data-reveal data-reveal-delay="80"><span class="ja">体験までの​流れ</span><span class="en">How to book your free trial</span></h2></div>
+<div class="steps">
+<div class="step" data-reveal><div class="n">01</div><h3><span class="ja">LINEで​友だち追加</span><span class="en">Add us on LINE</span></h3><p><span class="ja">下の​ボタンから。​「体験希望」と​送ってください。</span><span class="en">Tap the button below and send "trial".</span></p></div>
+<div class="step" data-reveal data-reveal-delay="90"><div class="n">02</div><h3><span class="ja">日時を​決める</span><span class="en">Pick a date</span></h3><p><span class="ja">クラスと​日時を​相談して​決めます。</span><span class="en">We'll match you with the right class and time.</span></p></div>
+<div class="step" data-reveal data-reveal-delay="180"><div class="n">03</div><h3><span class="ja">手ぶらで​OK</span><span class="en">Nothing to bring</span></h3><p><span class="ja">動きやすい​服装だけで。​道具は​不要、​体験は​1回無料。​無料駐車場完備なので​車で​どうぞ。</span><span class="en">Just wear comfortable clothes. No gear needed, first class is free, and parking is free.</span></p></div>
+</div>
+<div class="trial-cta" data-reveal><a class="btn line js-line" href="#trial"><svg><use href="#lineic"/></svg><span class="ja">体験申し込みは​コチラ</span><span class="en">Book a free trial on LINE</span><span class="arw">→</span></a><div><div class="mut" style="font-size:12px"><span class="ja">お電話でも​受付中</span><span class="en">Or call us</span></div><a class="tel" href="tel:08088345704">080-8834-5704</a><div class="mut" style="font-size:12px;margin-top:10px"><span class="ja">メールでの​お問い合わせ</span><span class="en">Email us</span></div><a class="mail" href="mailto:optimus.mma.fukaya@gmail.com?subject=OPTIMUS%20GYM%20%E3%81%B8%E3%81%AE%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">optimus.mma.fukaya@gmail.com</a></div></div>
+</div></section>
+
+<section id="about"><div class="wrap ab">
+<div class="ph" data-reveal="zoom"><img src="img/mma.jpg" alt="" loading="lazy" data-parallax="0.1"></div>
+<div>
+<div class="eyebrow" data-reveal>ABOUT</div>
+<h2 class="h2" data-reveal data-reveal-delay="80"><span class="ja">OPTIMUSは、<br>ラテン語で​「<span class="y">最善</span>」。</span><span class="en">OPTIMUS means<br>"<span class="y">the best</span>" in Latin.</span></h2>
+<p data-reveal data-reveal-delay="140"><span class="ja">あなたに​とって​最善の​場所、​最善の​技術を。​OPTIMUS GYMは、​パンクラスを​主戦場に​戦ってきた​太田純一が​開いた​ OOTA DOJO の​グループジムです。</span><span class="en">The best place and the best technique, for you. OPTIMUS GYM is part of OOTA DOJO, founded by former PANCRASE fighter Junichi Ota.</span></p>
+<p style="color:var(--mut)" data-reveal data-reveal-delay="200"><span class="ja">練習の​強制は​ありません。​途中参加も​自由。​プロ志望から​護身、​健康、​見学だけでも。</span><span class="en">No pressure, join any time. Pro hopefuls, self-defense, fitness — or just come and watch.</span></p>
+<div class="dojos" data-reveal data-reveal-delay="260">OOTA DOJO ／ KUMAGAYA ／ OMIYA ／ CHICHIBU ／ <b>OPTIMUS FUKAYA</b></div>
+</div>
+</div></section>
+
+<section id="sponsor" class="sp"><div class="wrap spw">
+<div><div class="eyebrow" data-reveal>SPONSOR</div>
+<h2 class="h2" data-reveal data-reveal-delay="60"><span class="ja">企業スポンサー、<br><span class="y">募集中。</span></span><span class="en">We're looking for<br><span class="y">sponsors.</span></span></h2></div>
+<div data-reveal data-reveal-delay="120"><p><span class="ja">OPTIMUS GYMと、​ここから​試合に​出る​選手たちを​応援してくれる​企業を​募集しています。​内容は​お気軽に​ご相談ください。</span><span class="en">We're looking for companies to support OPTIMUS GYM and the fighters who compete from here. Get in touch to talk it over.</span></p>
+<p style="margin-top:18px"><a class="tl" href="mailto:optimus.mma.fukaya@gmail.com?subject=%E3%82%B9%E3%83%9D%E3%83%B3%E3%82%B5%E3%83%BC%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87"><span class="ja">メールで​相談する</span><span class="en">Email us</span><span class="arw">→</span></a><span class="mut" style="margin-left:18px;font-size:14px"><span class="ja">電話</span><span class="en">Tel</span> <a href="tel:08088345704">080-8834-5704</a></span></p></div>
+</div></section>
+
+<section id="access" style="background:var(--ink2)"><div class="wrap acc">
+<div>
+<div class="eyebrow" data-reveal>ACCESS</div>
+<p class="ad" data-reveal data-reveal-delay="80">OPTIMUS GYM<br><span class="ja">埼玉県深谷市上柴町東2-23-1</span><span class="en">2-23-1 Kamishibacho-higashi, Fukaya, Saitama</span></p>
+<p style="margin-top:14px;font-size:20px;font-weight:900" data-reveal data-reveal-delay="110"><span class="y">P</span> <span class="ja">無料駐車場完備</span><span class="en">Free on-site parking</span></p>
+<p style="margin-top:22px" data-reveal data-reveal-delay="140"><a class="tl" href="https://www.google.com/maps/search/?api=1&query=%E5%9F%BC%E7%8E%89%E7%9C%8C%E6%B7%B1%E8%B0%B7%E5%B8%82%E4%B8%8A%E6%9F%B4%E7%94%BA%E6%9D%B12-23-1" target="_blank" rel="noopener"><span class="ja">Googleマップで​開く</span><span class="en">Open in Google Maps</span><span class="arw">→</span></a></p>
+</div>
+<div class="map" data-reveal="right"><iframe loading="lazy" title="map" src="https://www.google.com/maps?q=%E5%9F%BC%E7%8E%89%E7%9C%8C%E6%B7%B1%E8%B0%B7%E5%B8%82%E4%B8%8A%E6%9F%B4%E7%94%BA%E6%9D%B12-23-1&output=embed"></iframe></div>
+</div></section>
+
+<section class="final"><div class="bg"><img src="img/train.jpg" alt="" loading="lazy" data-parallax="0.15"></div><div class="wrap">
+<div class="eyebrow" data-reveal>JOIN OPTIMUS</div>
+<h2 data-reveal data-reveal-delay="80"><span class="ja">まずは​1回、<br>マットに<span class="y">上がろう。</span></span><span class="en">Step on the mat.<br><span class="y">First class is on us.</span></span></h2>
+<div class="cta" data-reveal data-reveal-delay="160"><a class="btn line js-line" href="#trial"><svg><use href="#lineic"/></svg><span class="ja">体験申し込みは​コチラ​（LINE）</span><span class="en">Book a free trial on LINE</span><span class="arw">→</span></a><a class="tl" href="https://www.instagram.com/optimusgym.mma/" target="_blank" rel="noopener">Instagram<span class="arw">→</span></a></div>
+</div></section>
+
+<footer><div class="wrap"><span>© 2026 OPTIMUS GYM ／ OOTA DOJO GROUP</span><span><span class="ja">この​ページは​リニューアル案​（プレビュー）です</span><span class="en">Renewal preview</span></span></div></footer>
+
+<div class="sticky" id="sticky"><a class="btn line js-line" href="#trial"><svg><use href="#lineic"/></svg><span class="ja">体験申し込みは​コチラ​（無料）</span><span class="en">Book a free trial</span></a></div>
+
+<button class="cbtn" id="cbtn" aria-label="チャットbot オプティマス"><span class="say"><span class="ja">質問どうぞ</span><span class="en">Ask me</span><i><b></b><b></b><b></b></i></span><span class="face"><img src="img/logo.png" alt=""></span></button>
+<div class="chat" id="chat" role="dialog" aria-label="chat">
+<div class="chh"><div class="who"><span class="av"><img src="img/logo.png" alt=""></span><div><b><span class="ja">チャットbot オプティマス</span><span class="en">OPTIMUS BOT</span></b><small><span class="ja">よく​ある​質問に​お答えします​（日本語 / English）</span><span class="en">Ask us anything (English / 日本語)</span></small></div></div><button id="cx" aria-label="close">×</button></div>
+<div class="cl" id="cl"></div>
+<form class="cf" id="cf"><input id="ci" autocomplete="off"><button type="submit"><span class="ja">送信</span><span class="en">Send</span></button></form>
+</div>
+
+<script>
+// LINE公式アカウント（OPTIMUS GYM）の友だち追加URL
+const LINE_URL = "https://lin.ee/wFbqPXa";
+document.querySelectorAll('.js-line').forEach(a=>{a.href=LINE_URL;a.target='_blank';a.rel='noopener'});
+
+/* 言語 */
+const html=document.documentElement;
+function setLang(l){html.lang=l;document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('on',b.dataset.l===l));try{localStorage.setItem('lang',l)}catch(e){}document.getElementById('ci').placeholder=l==='ja'?'例：料金はいくら？':'e.g. How much is it?';resetChat()}
+document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.l)));
+
+/* 出現・パララックス・数字（スクロール位置で毎回見る。IntersectionObserverは使わない） */
+const hd=document.getElementById('hd'),sticky=document.getElementById('sticky');
+const rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+let waiting=[...document.querySelectorAll('[data-reveal]')];
+const para=[...document.querySelectorAll('[data-parallax]')].map(el=>({el,s:+el.dataset.parallax||.1}));
+let cnts=[...document.querySelectorAll('.cnt')];
+function countUp(el){const to=+el.dataset.to;if(rm||to===0){el.textContent=to;return}let t0=null;const st=t=>{t0??=t;const p=Math.min((t-t0)/1200,1);el.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(st)};requestAnimationFrame(st)}
+let fr=0;
+function check(){fr=0;const y=scrollY,h=innerHeight;hd.classList.toggle('on',y>40);
+ if(rm){waiting.forEach(el=>el.classList.add('is-visible'));waiting=[]}
+ else{const lim=h*.88,rest=[];for(const el of waiting){if(el.getBoundingClientRect().top<lim){const d=+(el.dataset.revealDelay||0);if(d)el.style.animationDelay=d+'ms';el.classList.add('is-visible')}else rest.push(el)}waiting=rest;
+  for(const {el,s} of para){const r=el.getBoundingClientRect();if(r.bottom<0||r.top>h)continue;const ratio=(r.top+r.height/2-h/2)/h;el.style.transform=`translate3d(0,${(-ratio*s*100).toFixed(1)}px,0)`}}
+ cnts=cnts.filter(el=>{if(el.getBoundingClientRect().top<h*.9){countUp(el);return false}return true});
+ const t=document.getElementById('trial').getBoundingClientRect();const on=y>h*.9&&!(t.top<h*.9&&t.bottom>0);sticky.classList.toggle('on',on);document.body.classList.toggle('sticky-on',on)}
+addEventListener('scroll',()=>{if(!fr)fr=requestAnimationFrame(check)},{passive:true});
+(function(){const d=new Date(),m=d.getMonth()+1,last=new Date(d.getFullYear(),m,0).getDate(),mo=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][m-1];
+document.querySelectorAll('.camp-ja').forEach(s=>s.textContent=m+'月'+last+'日');document.querySelectorAll('.camp-en').forEach(s=>s.textContent=mo+' '+last)})();
+const mbtn=document.getElementById('mbtn'),mnu=document.getElementById('mnu');
+function setMenu(o){mnu.hidden=!o;mbtn.setAttribute('aria-expanded',o);hd.classList.toggle('open',o)}
+mbtn.addEventListener('click',e=>{e.stopPropagation();setMenu(mnu.hidden)});
+mnu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+document.addEventListener('click',e=>{if(!mnu.hidden&&!hd.contains(e.target))setMenu(false)});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false)});
+
+addEventListener('resize',()=>{if(!fr)fr=requestAnimationFrame(check)},{passive:true});
+requestAnimationFrame(()=>requestAnimationFrame(check));
+
+document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x===b));document.querySelectorAll('.pane').forEach(p=>p.classList.toggle('on',p.id===b.dataset.p))}));
+
+/* YouTube：押したときだけ読み込む */
+document.querySelectorAll('.yt').forEach(b=>b.addEventListener('click',()=>{const f=document.createElement('iframe');f.src=`https://www.youtube-nocookie.com/embed/${b.dataset.id}?autoplay=1&rel=0`;f.allow='autoplay; encrypted-media; picture-in-picture';f.allowFullscreen=true;f.title='video';b.innerHTML='';b.appendChild(f)},{once:true}));
+
+/* チャット（日英） */
+const FAQ=[
+{k:["メール","問い合わせ","問合せ","連絡","電話","mail","email","contact","phone","call"],q:{ja:"問い合わせ先は？",en:"How can I contact you?"},a:{ja:"LINE・電話・メールで受け付けています。\n電話 080-8834-5704\nメール optimus.mma.fukaya@gmail.com\nスポンサーのご相談も同じ連絡先へどうぞ。",en:"LINE, phone or email.\nPhone 080-8834-5704\nEmail optimus.mma.fukaya@gmail.com\nSponsorship inquiries welcome too."}},
+{k:["スポンサー","協賛","広告","sponsor","sponsorship","partner"],q:{ja:"スポンサーの募集はしていますか？",en:"Are you looking for sponsors?"},a:{ja:"はい、ジムを応援してくれる企業スポンサーを募集しています。LINE・電話・メールでご連絡ください。\n電話 080-8834-5704\nメール optimus.mma.fukaya@gmail.com",en:"Yes — we're looking for corporate sponsors to support the gym. Contact us on LINE, by phone (080-8834-5704) or email (optimus.mma.fukaya@gmail.com)."}},
+{k:["体験","無料","見学","trial","free","visit"],q:{ja:"体験はできますか？",en:"Can I try a class?"},a:{ja:"はい。メンズ・レディース・キッズ・シニア、いつでも体験・見学1回無料です。コーチが試合で不在のこともあるので、来る前にLINEかお電話（080-8834-5704）でご連絡ください。",en:"Yes! Your first trial or visit is free for everyone — men, women, kids and seniors. Coaches are sometimes away for fights, so please message us on LINE or call 080-8834-5704 before you come."}},
+{k:["料金","月謝","会費","値段","いくら","price","cost","fee","much"],q:{ja:"料金はいくらですか？",en:"How much does it cost?"},a:{ja:"月会費（税込）\n・選手育成 15,000円（通い放題）\n・一般 12,000円（通い放題）\n・フィットネス 10,000円〜\n・キッズ 6,000円〜\n入会金 10,000円（今月末までのご入会なら無料）、ビジター1回1時間 3,500円です。",en:"Monthly (tax incl.)\n・Fighter program ¥15,000 (unlimited)\n・General ¥12,000 (unlimited)\n・Fitness from ¥10,000\n・Kids from ¥6,000\nEnrollment fee ¥10,000 (free if you join by the end of this month). Visitor ¥3,500 per hour."}},
+{k:["入会","初期","最初","必要","join","enroll","sign"],q:{ja:"入会のときにいくら必要？",en:"What do I pay to join?"},a:{ja:"入会月と翌月の月会費2か月分＋入会金10,000円です。いまは今月末までのご入会で入会金が無料なので、一般の大人なら34,000円→24,000円です。お支払いは現金（手渡し）かPayPayマネーです。",en:"Two months' fees plus the ¥10,000 enrollment fee. Join by the end of this month and the enrollment fee is free, so a general adult pays ¥24,000 instead of ¥34,000. Pay in cash (in person) or with PayPay Money."}},
+{k:["初心者","初めて","未経験","怖","スパー","beginner","never","sparring","scared"],q:{ja:"格闘技が初めてでも大丈夫？",en:"I've never trained. Is that OK?"},a:{ja:"大丈夫です。どのクラス・どの時間から始めるかは、LINEで相談して決められます。スパーリング（対人）は希望者のみなので、無理にやることはありません。",en:"Absolutely. We'll help you choose a class and time on LINE, and sparring is optional — no one will force you."}},
+{k:["キッズ","子ども","子供","小学","kid","kids","child","children","son","daughter"],q:{ja:"子どもは何歳から？",en:"What age can kids start?"},a:{ja:"小学3年生から参加できます。月・水・木・土の18:30〜19:45。週1回 月6,000円から、週4回まで選べます。",en:"From 3rd grade (around age 8). Mon/Wed/Thu/Sat 18:30–19:45. From ¥6,000/month for once a week, up to 4 times a week."}},
+{k:["女性","レディース","women","woman","female","ladies"],q:{ja:"女性だけのクラスは？",en:"Any women-only classes?"},a:{ja:"女性限定フィットネスがあります。時間割では月・水・金の9:00〜10:00。週1回 月10,000円からです。",en:"Yes — women-only fitness, Mon/Wed/Fri 9:00–10:00 on the schedule. From ¥10,000/month for once a week."}},
+{k:["試合","プロ","大会","rizin","ufc","deep","pancrase","パンクラス","fight","compete"],q:{ja:"試合に出られますか？",en:"Can I compete?"},a:{ja:"はい。阿部右京コーチがマッチメイクを担当していて、CROSS OVER（ONEにつながる）・DEEP（RIZINにつながる）・パンクラス（UFCにつながる）などのアマチュア大会にすぐ出られる手はずがあります。",en:"Yes. Coach Ukyo Abe handles matchmaking, and members can enter amateur events like CROSS OVER (path to ONE), DEEP (path to RIZIN) and PANCRASE (path to UFC)."}},
+{k:["コーチ","先生","田嶋","右京","ダニエル","coach","tajima","ukyo","daniel","instructor"],q:{ja:"どんなコーチがいますか？",en:"Who are the coaches?"},a:{ja:"代表の小池ダニエル、水曜は現パンクラス バンタム級王者の田嶋椋コーチ、木曜はプロMMA 9勝（KO・一本で6勝）の阿部右京コーチ。OOTA DOJO総代表の太田純一も在籍しています。",en:"Head of the gym Daniel; Ryo Tajima, the reigning PANCRASE Bantamweight Champion (Wednesdays); Ukyo Abe, a pro MMA fighter with 9 wins, 6 by KO or submission (Thursdays); and OOTA DOJO head Junichi Ota."}},
+{k:["時間","スケジュール","何時","曜日","schedule","time","hours"],q:{ja:"練習は何時から？",en:"What time are classes?"},a:{ja:"プロ＆アマ練習は月〜土の20:10〜22:00（水は田嶋コーチ、木は右京コーチ）。昼は月・水〜土の10:00〜12:00。キッズは18:30〜19:45です。",en:"Pro & amateur training Mon–Sat 20:10–22:00 (Wed: Coach Tajima, Thu: Coach Ukyo). Daytime Mon & Wed–Sat 10:00–12:00. Kids 18:30–19:45."}},
+{k:["場所","住所","どこ","アクセス","where","address","access","location"],q:{ja:"場所はどこ？",en:"Where are you?"},a:{ja:"埼玉県深谷市上柴町東2-23-1です。ページ下のGoogleマップからどうぞ。",en:"2-23-1 Kamishibacho-higashi, Fukaya, Saitama. See the Google Map at the bottom of the page."}},
+{k:["休会","休み","やめ","pause","break","holiday"],q:{ja:"休会はできますか？",en:"Can I pause my membership?"},a:{ja:"1年以内で期日を決めて休会できます。休会中に会費が上がっても、前の会費のまま戻れます。",en:"Yes, for up to a year with a set end date. If fees go up meanwhile, you keep your old rate."}},
+{k:["出稽古","他のジム","OOTA","大宮","熊谷","秩父","other gym","omiya","kumagaya"],q:{ja:"出稽古はできますか？",en:"Can I drop in from another gym?"},a:{ja:"出稽古は1回3,000円です（事前に所属長の許可と連絡をお願いします）。OOTA DOJO各支部（熊谷・大宮・秩父）と柳澤柔術の方は無料です。",en:"Drop-ins are ¥3,000 (please get permission from your gym and contact us first). Free for OOTA DOJO members (Kumagaya, Omiya, Chichibu) and Yanagisawa Jiu-jitsu."}},
+{k:["駐車","駐車場","車","parking","park","car"],q:{ja:"駐車場はありますか？",en:"Is there parking?"},a:{ja:"あります。無料駐車場完備なので、車でそのまま来られます。",en:"Yes, free on-site parking, so you can drive straight here."}},
+{k:["シャワー","shower"],q:{ja:"シャワーはありますか？",en:"Is there a shower?"},a:{ja:"あります。月＋500円で使えます。",en:"Yes, for +¥500 per month."}},
+{k:["英語","english","外国","foreign"],q:{ja:"英語で教われますか？",en:"Can I train in English?"},a:{ja:"英語での対応は、LINEでお気軽にご相談ください。",en:"Message us on LINE and we'll see how we can help in English."}}
+];
+const cl=document.getElementById('cl'),chat=document.getElementById('chat');
+const L=()=>html.lang==='en'?'en':'ja';
+const SEG=window.Intl&&Intl.Segmenter?new Intl.Segmenter('ja',{granularity:'word'}):null;
+function soft(t){if(!SEG)return t;const a=[...SEG.segment(t)].map(x=>x.segment);let o='';const tail=/^([、。，．）」』！？ー・〜→\s]|[ぁ-ん]{1,2})/,K=/[\u4e00-\u9fff]/,W=/[A-Za-z0-9.,@_\-]/;
+a.forEach((g,i)=>{const p=i?a[i-1]:'',pe=p.slice(-1),gs=g[0];if(i&&!/\s/.test(pe)&&(pe==='）'||!tail.test(g))&&!/[（「『〜→\s]$/.test(p)&&!/^[おご]$/.test(p)&&!(K.test(pe)&&K.test(gs))&&!(W.test(pe)&&W.test(gs))&&!(/[0-9か]/.test(pe)&&/^[月円日時分人回]/.test(g)))o+='\u200b';o+=g});return o}
+function msg(t,who){const d=document.createElement('div');d.className='m '+who;d.textContent=who==='b'?soft(t):t;if(who==='b'){const r=document.createElement('div');r.className='mrow';r.innerHTML='<span class="av"><img src="img/logo.png" alt=""></span>';r.appendChild(d);cl.appendChild(r)}else cl.appendChild(d);cl.scrollTop=cl.scrollHeight;return d}
+function chips(list){const w=document.createElement('div');w.className='chips';list.forEach(f=>{const c=document.createElement('button');c.className='chip';c.type='button';c.textContent=f.q[L()];c.onclick=()=>ask(f.q[L()],f);w.appendChild(c)});cl.appendChild(w);cl.scrollTop=cl.scrollHeight}
+function resetChat(){cl.innerHTML='';msg(L()==='ja'?'チャットbotオプティマスです。気になることを選ぶか、入力してください。':"I'm Optimus, the gym's chatbot. Pick a question or type your own.",'b');chips(FAQ.slice(0,6))}
+function find(t){t=t.toLowerCase();let best=null,sc=0;FAQ.forEach(f=>{let s=0;f.k.forEach(k=>{k=k.toLowerCase();if(/^[a-z ]+$/.test(k)?new RegExp('\\b'+k+'\\b').test(t):t.includes(k))s++});if(s>sc){sc=s;best=f}});return best}
+function ask(t,f){msg(t,'u');f=f||find(t);setTimeout(()=>{if(f){msg(f.a[L()],'b')}else{msg(L()==='ja'?'ごめんなさい、その質問にはここでは答えられません。LINEかお電話（080-8834-5704）で気軽に聞いてください。':"Sorry, I can't answer that here. Please ask us on LINE or call 080-8834-5704.",'b')}
+const rest=FAQ.filter(x=>x!==f).slice(0,4);chips(rest)},350)}
+document.getElementById('cf').addEventListener('submit',e=>{e.preventDefault();const i=document.getElementById('ci');const t=i.value.trim();if(!t)return;i.value='';ask(t)});
+function setChat(o){chat.classList.toggle('open',o);document.body.classList.toggle('chat-open',o)}
+document.getElementById('cbtn').onclick=()=>setChat(!chat.classList.contains('open'));
+document.getElementById('cx').onclick=()=>setChat(false);
+let saved=null;try{saved=localStorage.getItem('lang')}catch(e){}
+const qs=new URLSearchParams(location.search).get('lang');
+const first=(qs==='en'||qs==='ja')?qs:(saved==='en'||saved==='ja')?saved:((navigator.language||'ja').startsWith('ja')?'ja':'en');
+setLang(first);
+</script>
+</body>
+</html>
