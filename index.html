@@ -233,6 +233,7 @@ td.x small{display:block;color:var(--y);font-size:11px}
 .mail{font-weight:700;font-size:15px;border-bottom:2px solid var(--y);word-break:break-all}
 .nw{white-space:nowrap}
 .ib{display:inline-block;white-space:nowrap}
+@media(max-width:480px){p.match{font-size:max(13.5px,min(17px,calc((100vw - 42px) / 22.4)))}}
 .match{text-wrap:wrap}
 @media(max-width:800px){.steps{grid-template-columns:1fr}.step,.step+.step{padding:22px 0;border-left:0;border-top:1px solid #cfc8bb}.step:first-child{border-top:0}}
 
@@ -294,6 +295,7 @@ body.sticky-on .cbtn{bottom:88px}
 .cl{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px}
 .m{max-width:86%;padding:10px 13px;font-size:14px;line-height:1.7;white-space:pre-wrap}
 .m.b{background:#2a2622;align-self:flex-start}
+.m.b a{color:var(--y);text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
 .m.u{background:var(--y);color:var(--ink);align-self:flex-end}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
 .chip{background:none;border:1px solid #5a544c;color:#d9d3c9;padding:6px 10px;font:12px "Noto Sans JP";cursor:pointer;text-align:left}
@@ -367,7 +369,7 @@ body.sticky-on .cbtn{bottom:88px}
 <div class="rw" data-reveal="left" data-reveal-delay="90"><div class="f">DEEP</div><div class="ar"><b>→</b><span class="ja">つながる​先</span><span class="en">LEADS TO</span></div><div class="t">RIZIN</div></div>
 <div class="rw" data-reveal="left" data-reveal-delay="180"><div class="f">PANCRASE</div><div class="ar"><b>→</b><span class="ja">つながる​先</span><span class="en">LEADS TO</span></div><div class="t">UFC</div></div>
 </div>
-<p class="match" data-reveal><span class="ja"><span class="ib">「強くなりたい」だけでなく、</span><wbr><span class="ib">「試合に​出てみたい」</span><wbr><span class="ib">「プロになりたい」まで。</span><br><span class="ib">ここから​先の​道は、</span><wbr><span class="ib">コーチが​一緒に​つくります。</span></span><span class="en">Whether you want to get stronger, try your first fight, or turn pro — your coaches build that road with you.</span></p>
+<p class="match" data-reveal><span class="ja"><span class="ib">「強くなりたい」だけでなく、</span><wbr><span class="ib">「試合に​出てみたい」​「プロになりたい」まで。</span><br><span class="ib">ここから​先の​道は、​コーチが​一緒に​つくります。</span></span><span class="en">Whether you want to get stronger, try your first fight, or turn pro — your coaches build that road with you.</span></p>
 </div></section>
 
 <section class="champ" id="coach"><div class="wrap">
@@ -379,7 +381,7 @@ body.sticky-on .cbtn{bottom:88px}
 <h3><small><span class="ja">代表コーチ ／ 月〜土</span><span class="en">Head coach / Mon–Sat</span></small><span class="ja">小池 ダニエル</span><span class="en">Daniel Koike</span></h3>
 <p><span class="ja">OPTIMUS GYM 深谷の​代表。</span><span class="en">Head of OPTIMUS GYM Fukaya.</span></p></div></div>
 <div class="co" data-reveal data-reveal-delay="120"><div class="cimg"><img src="img/c_tajima.jpg" alt="田嶋椋 Ryo Tajima" loading="lazy"></div><div class="pf">
-<h3><small><span class="ja">プロコーチ ／ 毎週​水曜 20:10〜</span><span class="en">Pro coach / Wednesdays 20:10–</span></small><span class="ja">田嶋 椋</span><span class="en">Ryo Tajima</span></h3>
+<h3><small><span class="ja">プロMMA選手・​プロコーチ ／ 毎週​水曜 20:10〜</span><span class="en">Pro MMA fighter &amp; pro coach / Wednesdays 20:10–</span></small><span class="ja">田嶋 椋</span><span class="en">Ryo Tajima</span></h3>
 <ul class="facts">
 <li><i>01</i><span><span class="ja">現パンクラス バンタム級 6代目王者</span><span class="en">Reigning PANCRASE Bantamweight Champion (6th)</span></span></li>
 <li><i>02</i><span><span class="ja">Road to UFC 決勝を​2027年2月7日に​控える</span><span class="en">Headed to the Road to UFC final on Feb 7, 2027</span></span></li>
@@ -475,7 +477,7 @@ body.sticky-on .cbtn{bottom:88px}
 <div class="step" data-reveal data-reveal-delay="90"><div class="n">02</div><h3><span class="ja">日時を​決める</span><span class="en">Pick a date</span></h3><p><span class="ja">クラスと​日時を​相談して​決めます。</span><span class="en">We'll match you with the right class and time.</span></p></div>
 <div class="step" data-reveal data-reveal-delay="180"><div class="n">03</div><h3><span class="ja">手ぶらで​OK</span><span class="en">Nothing to bring</span></h3><p><span class="ja">動きやすい​服装だけで。​道具は​不要、​体験は​1回無料。​無料駐車場完備なので​車で​どうぞ。</span><span class="en">Just wear comfortable clothes. No gear needed, first class is free, and parking is free.</span></p></div>
 </div>
-<div class="trial-cta" data-reveal><a class="btn line js-line" href="#trial"><svg><use href="#lineic"/></svg><span class="ja">体験申し込みは​コチラ</span><span class="en">Book a free trial on LINE</span><span class="arw">→</span></a><div><div class="mut" style="font-size:12px"><span class="ja">お電話でも​受付中</span><span class="en">Or call us</span></div><a class="tel" href="tel:08088345704">080-8834-5704</a><div class="mut" style="font-size:12px;margin-top:10px"><span class="ja">メールでの​お問い合わせ</span><span class="en">Email us</span></div><a class="mail" href="mailto:optimus.mma.fukaya@gmail.com?subject=OPTIMUS%20GYM%20%E3%81%B8%E3%81%AE%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">optimus.mma.fukaya@gmail.com</a></div></div>
+<div class="trial-cta" data-reveal><a class="btn line js-line" href="#trial"><svg><use href="#lineic"/></svg><span class="ja">体験申し込みは​コチラ</span><span class="en">Book a free trial on LINE</span><span class="arw">→</span></a><div><div class="mut" style="font-size:12px"><span class="ja">お電話でも​受付中</span><span class="en">Or call us</span></div><a class="tel" href="tel:08088345704">📞 080-8834-5704</a><div class="mut" style="font-size:12px;margin-top:10px"><span class="ja">メールでの​お問い合わせ</span><span class="en">Email us</span></div><a class="mail" href="mailto:optimus.mma.fukaya@gmail.com?subject=OPTIMUS%20GYM%20%E3%81%B8%E3%81%AE%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">optimus.mma.fukaya@gmail.com</a></div></div>
 </div></section>
 
 <section id="about"><div class="wrap ab">
@@ -492,8 +494,8 @@ body.sticky-on .cbtn{bottom:88px}
 <section id="sponsor" class="sp"><div class="wrap spw">
 <div><div class="eyebrow" data-reveal>SPONSOR</div>
 <h2 class="h2" data-reveal data-reveal-delay="60"><span class="ja">企業スポンサー、<br><span class="y">募集中。</span></span><span class="en">We're looking for<br><span class="y">sponsors.</span></span></h2>
-<div data-reveal data-reveal-delay="120"><p style="margin-top:24px"><span class="ja">OPTIMUS GYMと、​ここから​試合に​出る​選手たちを​応援してくれる​企業を​募集しています。​内容は​お気軽に​ご相談ください。</span><span class="en">We're looking for companies to support OPTIMUS GYM and the fighters who compete from here. Get in touch to talk it over.</span></p>
-<p style="margin-top:18px"><a class="tl" href="mailto:optimus.mma.fukaya@gmail.com?subject=%E3%82%B9%E3%83%9D%E3%83%B3%E3%82%B5%E3%83%BC%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87"><span class="ja">メールで​相談する</span><span class="en">Email us</span><span class="arw">→</span></a><span class="mut" style="margin-left:18px;font-size:14px"><span class="ja">電話</span><span class="en">Tel</span> <a href="tel:08088345704">080-8834-5704</a></span></p></div></div>
+<div data-reveal data-reveal-delay="120"><p style="margin-top:24px"><span class="ja"><span class="nw">OPTIMUS GYMと、</span><wbr><span class="nw">ここから​試合に​出る​選手たちを</span><wbr><span class="nw">応援してくれる​企業を</span><wbr><span class="nw">募集しています。</span><br><span class="nw">内容は​お気軽に</span><wbr><span class="nw">ご相談ください。</span></span><span class="en">We're looking for companies to support OPTIMUS GYM and the fighters who compete from here. Get in touch to talk it over.</span></p>
+<p style="margin-top:18px"><a class="tl" href="mailto:optimus.mma.fukaya@gmail.com?subject=%E3%82%B9%E3%83%9D%E3%83%B3%E3%82%B5%E3%83%BC%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87"><span class="ja">メールで​相談する</span><span class="en">Email us</span><span class="arw">→</span></a><span class="mut" style="margin-left:18px;font-size:14px"><a href="tel:08088345704">📞 080-8834-5704</a></span></p></div></div>
 <figure class="spph" data-reveal="zoom" data-reveal-delay="90"><img src="img/sponsor_flag.jpg" width="1000" height="928" loading="lazy" alt="スポンサー企業のロゴを並べた旗を持つ選手"></figure>
 </div></section>
 
@@ -571,6 +573,7 @@ const FAQ=[
 {k:["メール","問い合わせ","問合せ","連絡","電話","mail","email","contact","phone","call"],q:{ja:"問い合わせ先は？",en:"How can I contact you?"},a:{ja:"LINE・電話・メールで受け付けています。\n電話 080-8834-5704\nメール optimus.mma.fukaya@gmail.com\nスポンサーのご相談も同じ連絡先へどうぞ。",en:"LINE, phone or email.\nPhone 080-8834-5704\nEmail optimus.mma.fukaya@gmail.com\nSponsorship inquiries welcome too."}},
 {k:["スポンサー","協賛","広告","sponsor","sponsorship","partner"],q:{ja:"スポンサーの募集はしていますか？",en:"Are you looking for sponsors?"},a:{ja:"はい、ジムを応援してくれる企業スポンサーを募集しています。LINE・電話・メールでご連絡ください。\n電話 080-8834-5704\nメール optimus.mma.fukaya@gmail.com",en:"Yes — we're looking for corporate sponsors to support the gym. Contact us on LINE, by phone (080-8834-5704) or email (optimus.mma.fukaya@gmail.com)."}},
 {k:["体験","無料","見学","trial","free","visit"],q:{ja:"体験はできますか？",en:"Can I try a class?"},a:{ja:"はい。メンズ・レディース・キッズ・シニア、いつでも体験・見学1回無料です。コーチが試合で不在のこともあるので、来る前にLINEかお電話（080-8834-5704）でご連絡ください。",en:"Yes! Your first trial or visit is free for everyone — men, women, kids and seniors. Coaches are sometimes away for fights, so please message us on LINE or call 080-8834-5704 before you come."}},
+{k:["駐車","駐車場","車","parking","park","car"],q:{ja:"駐車場はありますか？無料ですか？",en:"Is there free parking?"},a:{ja:"あります。無料の駐車場があるので、車でそのまま来られます。",en:"Yes, free on-site parking, so you can drive straight here."}},
 {k:["料金","月謝","会費","値段","いくら","price","cost","fee","much"],q:{ja:"料金はいくらですか？",en:"How much does it cost?"},a:{ja:"月会費（税込）\n・選手育成 15,000円（通い放題）\n・一般 12,000円（通い放題）\n・フィットネス 10,000円〜\n・キッズ 6,000円〜\n入会金 10,000円（今月末までのご入会なら無料）、ビジター1回1時間 3,500円です。",en:"Monthly (tax incl.)\n・Fighter program ¥15,000 (unlimited)\n・General ¥12,000 (unlimited)\n・Fitness from ¥10,000\n・Kids from ¥6,000\nEnrollment fee ¥10,000 (free if you join by the end of this month). Visitor ¥3,500 per hour."}},
 {k:["入会","初期","最初","必要","join","enroll","sign"],q:{ja:"入会のときにいくら必要？",en:"What do I pay to join?"},a:{ja:"入会月と翌月の月会費2か月分＋入会金10,000円です。いまは今月末までのご入会で入会金が無料なので、一般の大人なら34,000円→24,000円です。お支払いは現金（手渡し）かPayPayマネーです。",en:"Two months' fees plus the ¥10,000 enrollment fee. Join by the end of this month and the enrollment fee is free, so a general adult pays ¥24,000 instead of ¥34,000. Pay in cash (in person) or with PayPay Money."}},
 {k:["初心者","初めて","未経験","怖","スパー","beginner","never","sparring","scared"],q:{ja:"格闘技が初めてでも大丈夫？",en:"I've never trained. Is that OK?"},a:{ja:"大丈夫です。どのクラス・どの時間から始めるかは、LINEで相談して決められます。スパーリング（対人）は希望者のみなので、無理にやることはありません。",en:"Absolutely. We'll help you choose a class and time on LINE, and sparring is optional — no one will force you."}},
@@ -582,7 +585,6 @@ const FAQ=[
 {k:["場所","住所","どこ","アクセス","where","address","access","location"],q:{ja:"場所はどこ？",en:"Where are you?"},a:{ja:"埼玉県深谷市上柴町東2-23-1です。ページ下のGoogleマップからどうぞ。",en:"2-23-1 Kamishibacho-higashi, Fukaya, Saitama. See the Google Map at the bottom of the page."}},
 {k:["休会","休み","やめ","pause","break","holiday"],q:{ja:"休会はできますか？",en:"Can I pause my membership?"},a:{ja:"1年以内で期日を決めて休会できます。休会中に会費が上がっても、前の会費のまま戻れます。",en:"Yes, for up to a year with a set end date. If fees go up meanwhile, you keep your old rate."}},
 {k:["出稽古","他のジム","OOTA","大宮","熊谷","秩父","other gym","omiya","kumagaya"],q:{ja:"出稽古はできますか？",en:"Can I drop in from another gym?"},a:{ja:"出稽古は1回3,000円です（事前に所属長の許可と連絡をお願いします）。OOTA DOJO各支部（熊谷・大宮・秩父）と柳澤柔術の方は無料です。",en:"Drop-ins are ¥3,000 (please get permission from your gym and contact us first). Free for OOTA DOJO members (Kumagaya, Omiya, Chichibu) and Yanagisawa Jiu-jitsu."}},
-{k:["駐車","駐車場","車","parking","park","car"],q:{ja:"駐車場はありますか？",en:"Is there parking?"},a:{ja:"あります。無料駐車場完備なので、車でそのまま来られます。",en:"Yes, free on-site parking, so you can drive straight here."}},
 {k:["シャワー","shower"],q:{ja:"シャワーはありますか？",en:"Is there a shower?"},a:{ja:"あります。月＋500円で使えます。",en:"Yes, for +¥500 per month."}},
 {k:["英語","english","外国","foreign"],q:{ja:"英語で教われますか？",en:"Can I train in English?"},a:{ja:"英語での対応は、LINEでお気軽にご相談ください。",en:"Message us on LINE and we'll see how we can help in English."}}
 ];
@@ -591,9 +593,9 @@ const L=()=>html.lang==='en'?'en':'ja';
 const SEG=window.Intl&&Intl.Segmenter?new Intl.Segmenter('ja',{granularity:'word'}):null;
 function soft(t){if(!SEG)return t;const a=[...SEG.segment(t)].map(x=>x.segment);let o='';const tail=/^([、。，．）」』！？ー・〜→\s]|[ぁ-ん]{1,2})/,K=/[\u4e00-\u9fff]/,W=/[A-Za-z0-9.,@_\-]/;
 a.forEach((g,i)=>{const p=i?a[i-1]:'',pe=p.slice(-1),gs=g[0];if(i&&!/\s/.test(pe)&&(pe==='）'||!tail.test(g))&&!/[（「『〜→\s]$/.test(p)&&!/^[おご]$/.test(p)&&!(K.test(pe)&&K.test(gs))&&!(W.test(pe)&&W.test(gs))&&!(/[0-9か]/.test(pe)&&/^[月円日時分人回]/.test(g)))o+='\u200b';o+=g});return o}
-function msg(t,who){const d=document.createElement('div');d.className='m '+who;d.textContent=who==='b'?soft(t):t;if(who==='b'){const r=document.createElement('div');r.className='mrow';r.innerHTML='<span class="av"><img src="img/logo.png" alt=""></span>';r.appendChild(d);cl.appendChild(r)}else cl.appendChild(d);cl.scrollTop=cl.scrollHeight;return d}
+function msg(t,who){const d=document.createElement('div');d.className='m '+who;if(who==='b'){d.innerHTML=soft(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c]).replace(/0\d{1,4}-\d{1,4}-\d{3,4}/g,n=>'<a href="tel:'+n.replace(/-/g,'')+'">'+n+'</a>')}else d.textContent=t;if(who==='b'){const r=document.createElement('div');r.className='mrow';r.innerHTML='<span class="av"><img src="img/logo.png" alt=""></span>';r.appendChild(d);cl.appendChild(r)}else cl.appendChild(d);cl.scrollTop=cl.scrollHeight;return d}
 function chips(list){const w=document.createElement('div');w.className='chips';list.forEach(f=>{const c=document.createElement('button');c.className='chip';c.type='button';c.textContent=f.q[L()];c.onclick=()=>ask(f.q[L()],f);w.appendChild(c)});cl.appendChild(w);cl.scrollTop=cl.scrollHeight}
-function resetChat(){cl.innerHTML='';msg(L()==='ja'?'チャットbotオプティマスです。気になることを選ぶか、入力してください。':"I'm Optimus, the gym's chatbot. Pick a question or type your own.",'b');chips(FAQ.slice(0,6))}
+function resetChat(){cl.innerHTML='';msg(L()==='ja'?'チャットbotオプティマスです。気になることを選ぶか、入力してください。':"I'm Optimus, the gym's chatbot. Pick a question or type your own.",'b');chips(FAQ.slice(0,7))}
 function find(t){t=t.toLowerCase();let best=null,sc=0;FAQ.forEach(f=>{let s=0;f.k.forEach(k=>{k=k.toLowerCase();if(/^[a-z ]+$/.test(k)?new RegExp('\\b'+k+'\\b').test(t):t.includes(k))s++});if(s>sc){sc=s;best=f}});return best}
 function ask(t,f){msg(t,'u');f=f||find(t);setTimeout(()=>{if(f){msg(f.a[L()],'b')}else{msg(L()==='ja'?'ごめんなさい、その質問にはここでは答えられません。LINEかお電話（080-8834-5704）で気軽に聞いてください。':"Sorry, I can't answer that here. Please ask us on LINE or call 080-8834-5704.",'b')}
 const rest=FAQ.filter(x=>x!==f).slice(0,4);chips(rest)},350)}
