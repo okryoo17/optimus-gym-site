@@ -331,6 +331,32 @@ body.sticky-on .cbtn{bottom:88px}
 posthog.init('phc_oFW9WGeyqF9orJs5w79xnnZAystd2kdeMPPjWUtg8Gdg',{api_host:'https://us.i.posthog.com',ui_host:'https://us.posthog.com',capture_pageview:true,capture_pageleave:true,person_profiles:'identified_only',disable_session_recording:true});
 </script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SportsActivityLocation","name":"OPTIMUS GYM 深谷","alternateName":["オプティマスジム","オプティマス深谷","OPTIMUS 深谷","OPTIMUS MMA"],"description":"埼玉県深谷市のMMAジム（総合格闘技）。MMA・キックボクシング・グラップリング・キッズ・女性フィットネス。体験1回無料。","url":"https://www.optimus-mma.com/","telephone":"+81-80-8834-5704","address":{"@type":"PostalAddress","addressCountry":"JP","addressRegion":"埼玉県","addressLocality":"深谷市","streetAddress":"上柴町東2-23-1"},"areaServed":"埼玉県深谷市"}</script>
+<script>
+/* 計測：どのセクションまで見られたか(section_view)・連絡ボタンのクリック(contact_click)。録画なし */
+document.addEventListener('DOMContentLoaded',function(){try{
+  var secs=[].slice.call(document.querySelectorAll('section'));
+  var name=function(el,i){return el.id||(el.classList.contains('final')?'final':'sec'+i)};
+  if('IntersectionObserver' in window){
+    var seen={};
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(!e.isIntersecting)return;var k=e.target.getAttribute('data-sec');
+      if(seen[k])return;seen[k]=1;io.unobserve(e.target);
+      posthog.capture('section_view',{section:k,order:+e.target.getAttribute('data-ord')});
+    })},{threshold:0.35});
+    secs.forEach(function(el,i){el.setAttribute('data-sec',name(el,i));el.setAttribute('data-ord',i+1);io.observe(el)});
+  }
+  document.addEventListener('click',function(ev){
+    var a=ev.target.closest&&ev.target.closest('a,button');if(!a)return;
+    var h=a.getAttribute('href')||'',kind='';
+    if(h.indexOf('tel:')===0)kind='tel';else if(h.indexOf('mailto:')===0)kind='mail';
+    else if(a.classList.contains('js-line')||h.indexOf('lin.ee')>-1)kind='line';
+    else if(h.indexOf('instagram.com')>-1)kind='instagram';
+    if(!kind)return;
+    var sec=a.closest('section,footer,.sticky');
+    posthog.capture('contact_click',{kind:kind,from:sec?(sec.getAttribute('data-sec')||sec.id||sec.className):'other'});
+  },true);
+}catch(e){}});
+</script>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute"><symbol id="lineic" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 4 3.6 7.3 8.4 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8.1-6C21.4 14.2 22 12.7 22 11c0-4.4-4.5-8-10-8zM8.3 13.4H6.4c-.3 0-.5-.2-.5-.5V9.1c0-.3.2-.5.5-.5s.5.2.5.5v3.3h1.4c.3 0 .5.2.5.5s-.2.5-.5.5zm2-.5c0 .3-.2.5-.5.5s-.5-.2-.5-.5V9.1c0-.3.2-.5.5-.5s.5.2.5.5v3.8zm4.6 0c0 .2-.1.4-.3.5h-.2c-.2 0-.3-.1-.4-.2l-1.9-2.6v2.3c0 .3-.2.5-.5.5s-.5-.2-.5-.5V9.1c0-.2.1-.4.3-.5h.2c.2 0 .3.1.4.2l1.9 2.6V9.1c0-.3.2-.5.5-.5s.5.2.5.5v3.8zm3.1-2.4c.3 0 .5.2.5.5s-.2.5-.5.5h-1.4v.9h1.4c.3 0 .5.2.5.5s-.2.5-.5.5h-1.9c-.3 0-.5-.2-.5-.5V9.1c0-.3.2-.5.5-.5h1.9c.3 0 .5.2.5.5s-.2.5-.5.5h-1.4v.9h1.4z"/></symbol></svg>
