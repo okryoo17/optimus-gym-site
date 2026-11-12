@@ -488,15 +488,14 @@ document.addEventListener('DOMContentLoaded',function(){try{
 <li><span class="nm"><span class="ja">一般​（通い​放題）</span><span class="en">General (unlimited)</span></span><span class="dot"></span><b>¥12,000<small>/<span class="ja">月</span><span class="en">mo</span></small></b></li>
 <li><span class="nm"><span class="ja">フィットネス会員</span><span class="en">Fitness</span></span><span class="dot"></span><b>¥10,000<span class="wv">〜</span><small>/<span class="ja">月</span><span class="en">mo</span></small></b></li>
 <li><span class="nm"><span class="ja">キッズ​（週1回〜）</span><span class="en">Kids (1x/week+)</span></span><span class="dot"></span><b>¥6,000<span class="wv">〜</span><small>/<span class="ja">月</span><span class="en">mo</span></small></b></li>
-<li><span class="nm"><span class="ja">入会金</span><span class="en">Enrollment fee</span> <em class="tag"><span class="ja">今なら​無料</span><span class="en">Free now</span></em></span><span class="dot"></span><b><s>¥10,000</s> <span class="rd">¥0</span></b></li>
+<li><span class="nm"><span class="ja">入会金</span><span class="en">Enrollment fee</span></span><span class="dot"></span><b>¥10,000</b></li>
 <li><span class="nm"><span class="ja">ビジター​（1回1時間）</span><span class="en">Visitor, non-member (1 hour)</span></span><span class="dot"></span><b>¥3,500</b></li>
 </ul>
 <div class="ex" data-reveal="right">
 <div class="lb">EXAMPLE</div>
 <div style="margin-top:8px;font-weight:700"><span class="ja">一般の​大人の​方が​入会する​場合</span><span class="en">Adult general membership, first payment</span></div>
-<div class="camp"><span class="ja"><b class="camp-ja">今月末</b>までの​ご入会で、<span class="nw">入会金 無料</span></span><span class="en">Join by <b class="camp-en">the end of this month</b>: no enrollment fee</span></div>
-<div class="sum"><s>¥34,000</s><span class="ar">→</span>¥24,000</div>
-<div style="font-size:13px;color:#cfc8bd"><span class="ja">月会費2か​月分 24,000円 ＋ <span class="nw">入会金 <s>10,000円</s> 0円</span></span><span class="en">2 months' fees ¥24,000 + enrollment <s>¥10,000</s> ¥0</span></div>
+<div class="sum">¥34,000</div>
+<div style="font-size:13px;color:#cfc8bd"><span class="ja">月会費2か​月分 24,000円 ＋ <span class="nw">入会金 10,000円</span></span><span class="en">2 months' fees ¥24,000 + enrollment ¥10,000</span></div>
 <ul><li><span class="ja">体験・​見学は​1回無料</span><span class="en">First trial is free</span></li><li><span class="ja">お支払いは​現金​（手渡し）か​PayPayマネー</span><span class="en">Pay in cash (in person) or with PayPay Money</span></li><li><span class="ja">シャワーは​月＋500円</span><span class="en">Shower +¥500/month</span></li><li><span class="ja">OOTA DOJOの​会員は、​熊谷・​大宮・​秩父の​各道場にも​通えます</span><span class="en">Members can also train at OOTA DOJO Kumagaya, Omiya and Chichibu</span></li></ul>
 </div>
 </div>
@@ -583,8 +582,6 @@ function check(){fr=0;const y=scrollY,h=innerHeight;hd.classList.toggle('on',y>4
  cnts=cnts.filter(el=>{if(el.getBoundingClientRect().top<h*.9){countUp(el);return false}return true});
  const t=document.getElementById('trial').getBoundingClientRect();const on=y>h*.9&&!(t.top<h*.9&&t.bottom>0);sticky.classList.toggle('on',on);document.body.classList.toggle('sticky-on',on)}
 addEventListener('scroll',()=>{if(!fr)fr=requestAnimationFrame(check)},{passive:true});
-(function(){const d=new Date(),m=d.getMonth()+1,last=new Date(d.getFullYear(),m,0).getDate(),mo=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][m-1];
-document.querySelectorAll('.camp-ja').forEach(s=>s.textContent=m+'月'+last+'日');document.querySelectorAll('.camp-en').forEach(s=>s.textContent=mo+' '+last)})();
 const mbtn=document.getElementById('mbtn'),mnu=document.getElementById('mnu');
 function setMenu(o){mnu.hidden=!o;mbtn.setAttribute('aria-expanded',o);hd.classList.toggle('open',o)}
 mbtn.addEventListener('click',e=>{e.stopPropagation();setMenu(mnu.hidden)});
@@ -606,8 +603,8 @@ const FAQ=[
 {k:["スポンサー","協賛","広告","sponsor","sponsorship","partner"],q:{ja:"スポンサーの募集はしていますか？",en:"Are you looking for sponsors?"},a:{ja:"はい、ジムを応援してくれる企業スポンサーを募集しています。LINE・電話・メールでご連絡ください。\n電話 080-8834-5704\nメール optimus.mma.fukaya@gmail.com",en:"Yes — we're looking for corporate sponsors to support the gym. Contact us on LINE, by phone (080-8834-5704) or email (optimus.mma.fukaya@gmail.com)."}},
 {k:["体験","無料","見学","trial","free","visit"],q:{ja:"体験はできますか？",en:"Can I try a class?"},a:{ja:"はい。メンズ・レディース・キッズ・シニア、いつでも体験・見学1回無料です。コーチが試合で不在のこともあるので、来る前にLINEかお電話（080-8834-5704）でご連絡ください。",en:"Yes! Your first trial or visit is free for everyone — men, women, kids and seniors. Coaches are sometimes away for fights, so please message us on LINE or call 080-8834-5704 before you come."}},
 {k:["駐車","駐車場","車","parking","park","car"],q:{ja:"駐車場はありますか？無料ですか？",en:"Is there free parking?"},a:{ja:"あります。無料の駐車場があるので、車でそのまま来られます。",en:"Yes, free on-site parking, so you can drive straight here."}},
-{k:["料金","月謝","会費","値段","いくら","price","cost","fee","much"],q:{ja:"料金はいくらですか？",en:"How much does it cost?"},a:{ja:"月会費（税込）\n・選手育成 15,000円（通い放題）\n・一般 12,000円（通い放題）\n・フィットネス 10,000円〜\n・キッズ 6,000円〜\n入会金 10,000円（今月末までのご入会なら無料）、ビジター1回1時間 3,500円です。",en:"Monthly (tax incl.)\n・Fighter program ¥15,000 (unlimited)\n・General ¥12,000 (unlimited)\n・Fitness from ¥10,000\n・Kids from ¥6,000\nEnrollment fee ¥10,000 (free if you join by the end of this month). Visitor ¥3,500 per hour."}},
-{k:["入会","初期","最初","必要","join","enroll","sign"],q:{ja:"入会のときにいくら必要？",en:"What do I pay to join?"},a:{ja:"入会月と翌月の月会費2か月分＋入会金10,000円です。いまは今月末までのご入会で入会金が無料なので、一般の大人なら34,000円→24,000円です。お支払いは現金（手渡し）かPayPayマネーです。",en:"Two months' fees plus the ¥10,000 enrollment fee. Join by the end of this month and the enrollment fee is free, so a general adult pays ¥24,000 instead of ¥34,000. Pay in cash (in person) or with PayPay Money."}},
+{k:["料金","月謝","会費","値段","いくら","price","cost","fee","much"],q:{ja:"料金はいくらですか？",en:"How much does it cost?"},a:{ja:"月会費（税込）\n・選手育成 15,000円（通い放題）\n・一般 12,000円（通い放題）\n・フィットネス 10,000円〜\n・キッズ 6,000円〜\n入会金 10,000円、ビジター1回1時間 3,500円です。",en:"Monthly (tax incl.)\n・Fighter program ¥15,000 (unlimited)\n・General ¥12,000 (unlimited)\n・Fitness from ¥10,000\n・Kids from ¥6,000\nEnrollment fee ¥10,000. Visitor ¥3,500 per hour."}},
+{k:["入会","初期","最初","必要","join","enroll","sign"],q:{ja:"入会のときにいくら必要？",en:"What do I pay to join?"},a:{ja:"入会月と翌月の月会費2か月分＋入会金10,000円です。一般の大人なら34,000円です。お支払いは現金（手渡し）かPayPayマネーです。",en:"Two months' fees plus the ¥10,000 enrollment fee. A general adult pays ¥34,000. Pay in cash (in person) or with PayPay Money."}},
 {k:["初心者","初めて","未経験","怖","スパー","beginner","never","sparring","scared"],q:{ja:"格闘技が初めてでも大丈夫？",en:"I've never trained. Is that OK?"},a:{ja:"大丈夫です。どのクラス・どの時間から始めるかは、LINEで相談して決められます。スパーリング（対人）は希望者のみなので、無理にやることはありません。",en:"Absolutely. We'll help you choose a class and time on LINE, and sparring is optional — no one will force you."}},
 {k:["キッズ","子ども","子供","小学","kid","kids","child","children","son","daughter"],q:{ja:"子どもは何歳から？",en:"What age can kids start?"},a:{ja:"小学3年生から参加できます。月・水・木・土の18:30〜19:45。週1回 月6,000円から、週4回まで選べます。",en:"From 3rd grade (around age 8). Mon/Wed/Thu/Sat 18:30–19:45. From ¥6,000/month for once a week, up to 4 times a week."}},
 {k:["女性","レディース","women","woman","female","ladies"],q:{ja:"女性だけのクラスは？",en:"Any women-only classes?"},a:{ja:"女性限定フィットネスがあります。時間割では月・水・金の9:00〜10:00。週1回 月10,000円からです。",en:"Yes — women-only fitness, Mon/Wed/Fri 9:00–10:00 on the schedule. From ¥10,000/month for once a week."}},
