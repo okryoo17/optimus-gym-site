@@ -95,7 +95,7 @@ nav a:hover{opacity:1;color:var(--y)}
 .stat b{display:block;font-family:Anton,sans-serif;font-weight:400;font-size:clamp(34px,4.4vw,56px);line-height:1;color:var(--tx)}
 .stat b i{font-style:normal;color:var(--y)}
 .stat>span{display:block;font-size:12px;color:var(--mut);margin-top:8px}
-@media(max-width:700px){.stats{grid-template-columns:1fr 1fr}.stat:nth-child(odd){padding-left:0;border-left:0}.stat:nth-child(even){padding-left:18px;border-left:1px solid var(--rule)}.stat:nth-child(n+3){border-top:1px solid var(--rule);margin-top:14px}.stat:last-child{grid-column:1/-1}}
+@media(max-width:700px){.stats{grid-template-columns:1fr 1fr}.stat:nth-child(odd){padding-left:0;border-left:0}.stat:nth-child(even){padding-left:18px;border-left:1px solid var(--rule)}.stat:nth-child(n+3){border-top:1px solid var(--rule);margin-top:14px}}
 
 /* ticker */
 .mq{background:var(--y);color:var(--ink);overflow:hidden;white-space:nowrap;padding:10px 0;transform:rotate(-1.2deg);position:relative;z-index:3}
@@ -393,7 +393,7 @@ document.addEventListener('DOMContentLoaded',function(){try{
 <div class="stats">
 <div class="stat" data-reveal data-reveal-delay="300"><b><i>¥</i><span class="cnt" data-to="0">0</span></b><span class="ja">体験・​見学1回</span><span class="en">First trial class</span></div>
 <div class="stat" data-reveal data-reveal-delay="380"><b><i>PRO</i></b><span class="ja">王者・プロの​コーチ陣</span><span class="en">Champion &amp; pro coaches</span></div>
-<div class="stat" data-reveal data-reveal-delay="540"><b><i>KIDS</i></b><span class="ja">小3から。​月・水・木・土 18:30〜</span><span class="en">Age 8+. Mon/Wed/Thu/Sat 18:30–</span></div>
+<div class="stat" data-reveal data-reveal-delay="540"><b><i>KIDS</i></b><span class="ja">小3から。​月・水・木・土 <span style="white-space:nowrap">18:30〜</span></span><span class="en">Age 8+. Mon/Wed/Thu/Sat 18:30–</span></div>
 <div class="stat" data-reveal data-reveal-delay="620"><b><span class="cnt" data-to="6">0</span><i> DAYS</i></b><span class="ja">月〜土 朝10:00〜／夜20:10〜</span><span class="en">Mon–Sat, mornings 10:00 &amp; nights 20:10</span></div>
 </div>
 </div>
