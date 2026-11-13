@@ -265,6 +265,10 @@ td.x small{display:block;color:var(--y);font-size:11px}
 .final .bg img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) brightness(.35)}
 .final .wrap{position:relative;z-index:1}
 .final h2{font-size:clamp(34px,6vw,76px);font-weight:900;line-height:1.15;margin-top:16px}
+.cw{padding:28px 0 0}
+.cw a{display:block;max-width:640px;margin:0 auto;padding:18px 22px;border:1px solid var(--rule);border-radius:12px;text-align:center;color:inherit;text-decoration:none;font-size:14px;line-height:1.8}
+.cw a b{display:block;font-size:15px}
+.cw a .arw{color:#7b746a}
 footer{padding:36px 0 120px;font-size:12px;color:#7b746a;border-top:1px solid var(--rule)}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 
@@ -349,6 +353,7 @@ document.addEventListener('DOMContentLoaded',function(){try{
   document.addEventListener('click',function(ev){
     var a=ev.target.closest&&ev.target.closest('a,button');if(!a)return;
     var h=a.getAttribute('href')||'',kind='';
+    if(a.classList.contains('js-cw')){posthog.capture('concierge_banner_click',{href:h});return}
     if(h.indexOf('tel:')===0)kind='tel';else if(h.indexOf('mailto:')===0)kind='mail';
     else if(a.classList.contains('js-line')||h.indexOf('lin.ee')>-1)kind='line';
     else if(h.indexOf('instagram.com')>-1)kind='instagram';
@@ -546,6 +551,8 @@ document.addEventListener('DOMContentLoaded',function(){try{
 <h2 data-reveal data-reveal-delay="80"><span class="ja">まずは​1回、<br>マットに<span class="y">上がろう。</span></span><span class="en">Step on the mat.<br><span class="y">First class is on us.</span></span></h2>
 <div class="cta" data-reveal data-reveal-delay="160"><a class="btn line js-line" href="#trial"><svg><use href="#lineic"/></svg><span class="ja">体験申し込みは​コチラ​（LINE）</span><span class="en">Book a free trial on LINE</span><span class="arw">→</span></a><a class="tl" href="https://www.instagram.com/optimusgym.mma/" target="_blank" rel="noopener">Instagram<span class="arw">→</span></a></div>
 </div></section>
+
+<div class="cw" data-sec="concierge_banner"><div class="wrap"><a class="js-cw" href="https://web.circularhouseinc.com/ja?utm_source=optimus-mma&amp;utm_medium=banner&amp;utm_campaign=hp_footer" target="_blank" rel="noopener"><b>このHPは無料で制作しました。</b>月9,800円〜でHPを作りたい方は、コンシェルジュWebへ今すぐお問い合わせ！<span class="arw"> →</span></a></div></div>
 
 <footer><div class="wrap"><span>© 2026 OPTIMUS GYM ／ OOTA DOJO GROUP</span><span><span class="ja">この​ページは​リニューアル案​（プレビュー）です</span><span class="en">Renewal preview</span></span></div></footer>
 
